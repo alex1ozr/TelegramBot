@@ -1,49 +1,121 @@
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.HttpLogging;
+using Microsoft.AspNetCore.HttpOverrides;
+using TelegramBot.Application;
+using TelegramBot.Data;
+using TelegramBot.Data.Engine.Migrations;
+using TelegramBot.Framework.ClickHouse;
+using TelegramBot.Framework.ClickHouse.Migrations;
+using TelegramBot.Framework.EntityFramework.Migrations;
 using TelegramBot.Host;
 
-var builder = WebApplication.CreateBuilder(args);
+var loggerFactory = PrepareLogging();
+var logger = loggerFactory.CreateLogger<Program>();
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    Args = args,
+    ContentRootPath = Directory.GetCurrentDirectory()
+});
+
+builder.Configuration.AddJsonFile("appsettings.defaults.json");
+
+var serviceName = builder.Configuration["Host:Name"] ?? "unknown-service";
+ConfigureServices(builder.Services, builder.Configuration);
+//builder.AddServiceDefaults(logger, serviceName, customMeterNames: ["sweather_bot"]);
+
+try
+{
+    logger.LogInformation("Starting application...");
+    var app = builder.Build();
+
+    await PrepareDatabase(builder.Configuration, loggerFactory, app.Services)
+        .ConfigureAwait(false);
+
+    ConfigureWebApplication(app);
+    await app.RunAsync().ConfigureAwait(false);
+}
+catch (Exception ex)
+{
+    logger.LogCritical(ex, "Application terminated unexpectedly");
+    // Sets application exit code
+    throw;
+}
+finally
+{
+    logger.LogInformation("Stopping application...");
+    loggerFactory.Dispose();
 }
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
+static void ConfigureServices(
+    IServiceCollection services,
+    IConfiguration configuration)
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
+    services.AddMetrics();
+    services.AddHttpLogging(logging =>
     {
-        var forecast = Enumerable.Range(1, 5).Select(index =>
-                new WeatherForecast
-                (
-                    DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Random.Shared.Next(-20, 55),
-                    summaries[Random.Shared.Next(summaries.Length)]
-                ))
-            .ToArray();
-        return forecast;
-    })
-    .WithName("GetWeatherForecast")
-    .WithOpenApi();
+        logging.CombineLogs = true;
+        logging.LoggingFields = HttpLoggingFields.RequestMethod | HttpLoggingFields.RequestPath |
+                                HttpLoggingFields.ResponseStatusCode | HttpLoggingFields.Duration |
+                                HttpLoggingFields.RequestQuery | HttpLoggingFields.RequestScheme;
+    });
 
-app.Run();
+    services.AddControllers()
+        .AddControllersAsServices();
+    services.AddEndpointsApiExplorer();
 
-namespace TelegramBot.Host
+    services.Configure<ForwardedHeadersOptions>(options =>
+    {
+        options.ForwardedHeaders = ForwardedHeaders.XForwardedProto;
+    });
+
+    RegisterCommonServices(services);
+    services.AddBotApplication(configuration);
+    services.AddData(configuration);
+    services.AddClickHouse();
+
+    services.AddHostedService<BotBackgroundService>();
+}
+
+static void ConfigureWebApplication(WebApplication app)
 {
-    record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+    //app.MapDefaultEndpoints();
+    app.UseForwardedHeaders();
+
+    app.UseHealthChecks("/health",
+        new HealthCheckOptions
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+        });
+
+    app.UseHttpLogging();
+    app.MapControllers();
+}
+
+
+static void RegisterCommonServices(IServiceCollection services)
+{
+    services.AddSingleton(_ => TimeProvider.System);
+    services.AddHttpContextAccessor();
+}
+
+static async Task PrepareDatabase(IConfiguration configuration, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
+{
+    var logger = loggerFactory.CreateLogger("SpaceWeatherBotDbMigration");
+    await DatabaseMigrationManager.MigrateAsync<DataContextFactory>( logger)
+        .ConfigureAwait(false);
+
+    var clickHouseMigration = serviceProvider.GetRequiredService<IClickHouseMigrationRunner>();
+    await clickHouseMigration.MigrateFromAssemblyAsync(typeof(DataContextFactory).Assembly)
+        .ConfigureAwait(false);
+}
+
+static ILoggerFactory PrepareLogging()
+{
+    return LoggerFactory.Create(builder =>
     {
-        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-    }
+        builder.AddConsole();
+    });
 }
