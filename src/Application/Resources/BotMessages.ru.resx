@@ -1,0 +1,194 @@
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HelpCommand" xml:space="preserve">
+    <value>&lt;b&gt;Добро пожаловать в SWeather bot (beta)!&lt;/b&gt;  
+Будьте в курсе космической погоды с нашим ботом.
+
+&lt;b&gt;Команды:&lt;/b&gt;
+
+- &lt;b&gt;/ovation_prime&lt;/b&gt;: Прогноз и мониторинг сияний (Ovation Prime)
+- &lt;b&gt;/discussions&lt;/b&gt;: Получить последние прогнозы и обсуждения космической погоды.
+- &lt;b&gt;/set_language&lt;/b&gt;: Установить предпочитаемый язык для бота.
+- &lt;b&gt;/policy&lt;/b&gt;: Ознакомиться с политикой конфиденциальности.
+- &lt;b&gt;/donate&lt;/b&gt;: Поддержать развитие бота, пожертвовав Telegram звёзды.
+- &lt;b&gt;/help&lt;/b&gt;: Посмотреть этот список команд и узнать, как пользоваться ботом.
+
+&lt;b&gt;Связь с нами:&lt;/b&gt;
+
+- &lt;b&gt;Канал Telegram&lt;/b&gt;: &lt;a href="https://t.me/aurorasciencehub"&gt;Aurora Science Hub&lt;/a&gt;
+- &lt;b&gt;Чат в Telegram&lt;/b&gt;: &lt;a href="https://t.me/+DBxLzqrDX0UxNTQy"&gt;Присоединиться к беседе&lt;/a&gt;
+- &lt;b&gt;Email&lt;/b&gt;: &lt;a href="mailto:contact@aurorasciencehub.com"&gt;contact@aurorasciencehub.com&lt;/a&gt;
+
+Спасибо за использование SWeather bot! Если у Вас есть вопросы или нужна помощь, не стесняйтесь обращаться к нам.
+</value>
+  </data>
+  <data name="UnknownCommand" xml:space="preserve">
+    <value>Неизвестная команда</value>
+  </data>
+  <data name="NoDataAvailable" xml:space="preserve">
+    <value>Нет данных на текущий момент</value>
+  </data>
+  <data name="NoaaForecastDiscussion" xml:space="preserve">
+    <value>Обзор NOAA на 1 день ({0} UTC):
+{1}
+
+Источник: {2}</value>
+  </data>
+  <data name="DonateCommand" xml:space="preserve">
+    <value>Пожалуйста, выберите опцию для пожертвования.</value>
+  </data>
+  <data name="DonationInvoiceDescription" xml:space="preserve">
+    <value>Ваше пожертвование поможет сервису стать еще лучше!</value>
+  </data>
+  <data name="CannotCreateInvoiceError" xml:space="preserve">
+    <value>Не удалось выставить счёт.</value>
+  </data>
+  <data name="Donation" xml:space="preserve">
+    <value>Пожертвование</value>
+  </data>
+  <data name="DonationDescription" xml:space="preserve">
+    <value>Пожертвование {0} {1}</value>
+  </data>
+  <data name="ThanksForSupportMessage" xml:space="preserve">
+    <value>Спасибо за вашу поддержку!</value>
+  </data>
+  <data name="SuccessfulRefundMessage" xml:space="preserve">
+    <value>Возврат средств был успешно проведён.</value>
+  </data>
+  <data name="DiscussionsCommand" xml:space="preserve">
+    <value>Пожалуйста, выберите опцию</value>
+  </data>
+  <data name="SidcForecastDiscussion" xml:space="preserve">
+    <value>Обзор SIDC Presto ({0} UTC):
+{1}
+
+Источник: {2}</value>
+  </data>
+  <data name="NoaaForecast27Discussion" xml:space="preserve">
+    <value>Обзор NOAA на 27 дней ({0} UTC):
+{1}
+
+Источник: {2}</value>
+  </data>
+  <data name="DiscussionCommandDescription" xml:space="preserve">
+    <value>Обзоры и прогнозы космической погоды</value>
+  </data>
+  <data name="IpgForecastDiscussion" xml:space="preserve">
+    <value>Обзор ФГБУ "ИПГ" на 1 день ({0} UTC):
+{1}
+
+Источник: {2}</value>
+  </data>
+  <data name="SetUserLanguageCommand" xml:space="preserve">
+    <value>Пожалуйста, выберите язык</value>
+  </data>
+  <data name="UserLanguageWasSetIntoRussian" xml:space="preserve">
+    <value>Был установлен русский язык интерфейса</value>
+  </data>
+  <data name="UserLanguageWasSetIntoEnglish" xml:space="preserve">
+    <value>Language was set to English</value>
+  </data>
+  <data name="UserLanguageWasSetIntoAuto" xml:space="preserve">
+    <value>Был установлен автоматический выбор языка интерфейса</value>
+  </data>
+  <data name="HelpCommandDescription" xml:space="preserve">
+    <value>Список доступных команд и инструкции по использованию бота.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>*Политика конфиденциальности для SWeather\.Bot*
+
+Добро пожаловать в SWeather\.Bot\!
+Мы ценим вашу конфиденциальность и обязуемся защищать ваши личные данные\.
+Эта политика конфиденциальности объясняет, как мы собираем, используем и защищаем ваши данные в соответствии с Общим положением о защите данных \(GDPR\)\.
+
+*1\. Собираемая нами информация*
+\- *Информация о пользователе*: Мы собираем ваш идентификатор пользователя Telegram, имя пользователя и языковые предпочтения, чтобы персонализировать ваш опыт\.
+\- *Данные об использовании бота*: Мы отслеживаем ваше взаимодействие с ботом, например, выполняемые команды, чтобы улучшить наши услуги\.
+
+*2\. Правовое основание для обработки*
+\- *Исполнение договора*: Мы обрабатываем ваши данные для предоставления услуг, предлагаемых ботом\.
+\- *Легитимные интересы*: Мы используем ваши данные для улучшения и обеспечения безопасности наших услуг\.
+\- *Согласие*: В соответствующих случаях мы можем запросить ваше согласие на обработку определенных типов данных\.
+
+*3\. Как мы используем вашу информацию*
+\- *Персонализация*: Для настройки контента на предпочитаемом вами языке\.
+\- *Улучшение сервиса*: Для анализа использования ботов и улучшения функциональности\.
+\- *Коммуникация*: Чтобы информировать вас об обновлениях или важной информации, связанной с ботом\.
+
+*4\. Обмен данными*
+Мы *не* продаем, не передаем и не распространяем ваши личные данные третьим лицам, за исключением случаев, предусмотренных законом\.
+
+*5\. Хранение данных*
+Мы храним ваши данные только до тех пор, пока это необходимо для выполнения целей, изложенных в настоящей политике, или в соответствии с требованиями закона\. Если вы потребуете удаления, мы незамедлительно удалим ваши данные, за исключением случаев, когда мы обязаны хранить их по закону\.
+
+*6\. Ваши права в соответствии с GDPR*
+У вас есть следующие права в отношении ваших персональных данных:
+\- *Право доступа*: Вы можете запросить доступ к своим персональным данным\.
+\- *Право на исправление*: Вы можете запросить исправление своих данных, если они являются неточными или неполными\.
+\- *Право на удаление*: Вы можете запросить удаление своих данных \(«право быть забытым»\)\.
+\- *Право на ограничение обработки*: Вы можете потребовать, чтобы мы ограничили обработку ваших данных\.
+\- *Право на переносимость данных*: Вы можете запросить копию своих данных в машиночитаемом формате\.
+\- *Право на возражение*: Вы можете возражать против обработки ваших данных на основании законных интересов\.
+\- *Право на отзыв согласия*: Если обработка основана на согласии, вы можете отозвать его в любое время\.
+
+*7\. Международная передача данных*\.
+Если мы передаем ваши данные за пределы Европейской экономической зоны \(ЕЭЗ\), мы обеспечиваем их защиту с помощью соответствующих мер предосторожности, таких как стандартные договорные положения, одобренные Европейской комиссией\.
+
+*8\. Безопасность данных*
+Мы используем соответствующие технические и организационные меры для защиты ваших данных от несанкционированного доступа, потери или раскрытия\. Однако, пожалуйста, обратите внимание, что ни одна передача данных через Интернет не является полностью безопасной\.
+
+*9\. Изменения в данной политике*
+Мы можем время от времени обновлять эту политику конфиденциальности\. О существенных изменениях мы будем сообщать через бот или другими соответствующими способами\.
+
+*10\. Связаться с нами*
+По всем вопросам, проблемам или запросам, касающимся ваших данных или данной политики конфиденциальности, обращайтесь к нашему специалисту по защите данных по адресу contact@aurorasciencehub\.com\.
+
+Спасибо, что доверяете SWeather\.Bot\!</value>
+  </data>
+  <data name="OvationPrimeCommand" xml:space="preserve">
+    <value>Пожалуйста, выберите опцию</value>
+  </data>
+  <data name="OvationPrimeNoaaForecast1H" xml:space="preserve">
+    <value>Прогноз на 1ч</value>
+  </data>
+  <data name="OvationPrimeNoaaForecast1HCaption" xml:space="preserve">
+    <value>Прогноз на 1ч {0} МСК ({1} UTC)</value>
+  </data>
+  <data name="OvationPrimeNoaaNowcast" xml:space="preserve">
+    <value>Сияние сейчас</value>
+  </data>
+  <data name="OvationPrimeNoaaNowcastCaption" xml:space="preserve">
+    <value>Сияние сейчас</value>
+  </data>
+  <data name="OvationPrimeCommandDescription" xml:space="preserve">
+    <value>Прогноз и мониторинг сияний (Ovation Prime)</value>
+  </data>
+  <data name="CommandNotAllowedInGroups" xml:space="preserve">
+    <value>Команда /{0} недоступна в групповых чатах</value>
+  </data>
+  <data name="BotStatistics" xml:space="preserve">
+    <value>&lt;b&gt;Статистика бота за {0}&lt;/b&gt;
+
+&lt;b&gt;Топ команд:&lt;/b&gt;
+{1}
+
+Всего: {2}
+
+&lt;b&gt;Топ пользователей:&lt;/b&gt;
+{3}
+
+&lt;b&gt;Новые пользователи (+{4}, всего: {5}):&lt;/b&gt;
+{6}</value>
+  </data>
+</root>

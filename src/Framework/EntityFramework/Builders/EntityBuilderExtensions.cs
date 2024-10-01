@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using AuroraScienceHub.Framework.Entities;
-using AuroraScienceHub.Framework.Entities.Identifiers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using TelegramBot.Framework.Entities;
+using TelegramBot.Framework.Entities.Identifiers;
 using TelegramBot.Framework.Utilities.System;
 
 namespace TelegramBot.Framework.EntityFramework.Builders;

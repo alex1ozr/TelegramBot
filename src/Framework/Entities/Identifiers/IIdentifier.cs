@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace AuroraScienceHub.Framework.Entities.Identifiers;
+namespace TelegramBot.Framework.Entities.Identifiers;
 
 /// <summary>
 /// Identifier

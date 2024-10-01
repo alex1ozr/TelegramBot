@@ -1,7 +1,5 @@
 ﻿using System.Linq.Expressions;
-using AuroraScienceHub.Framework.Entities;
-using AuroraScienceHub.Framework.Entities.Identifiers;
-using AuroraScienceHub.Framework.Entities.Storage;
+using TelegramBot.Framework.Entities.Identifiers;
 
 namespace TelegramBot.Framework.Entities;
 

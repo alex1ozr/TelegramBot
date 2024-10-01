@@ -1,5 +1,4 @@
-﻿using AuroraScienceHub.Framework.Entities.Identifiers;
-using TelegramBot.Framework.Entities.Identifiers;
+﻿using TelegramBot.Framework.Entities.Identifiers;
 
 namespace TelegramBot.Domain.Accounting.Users;
 

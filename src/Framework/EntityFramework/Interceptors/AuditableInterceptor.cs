@@ -1,6 +1,6 @@
-﻿using AuroraScienceHub.Framework.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using TelegramBot.Framework.Entities;
 
 namespace TelegramBot.Framework.EntityFramework.Interceptors;
 

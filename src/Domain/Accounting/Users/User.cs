@@ -1,6 +1,6 @@
-using AuroraScienceHub.Framework.Entities;
 using TelegramBot.Domain.Accounting.Roles;
 using TelegramBot.Domain.Billing.Invoices;
+using TelegramBot.Framework.Entities;
 
 namespace TelegramBot.Domain.Accounting.Users;
 

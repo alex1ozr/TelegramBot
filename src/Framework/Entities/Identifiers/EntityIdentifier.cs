@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using AuroraScienceHub.Framework.Entities.Identifiers;
 using TelegramBot.Framework.Utilities.System;
 
 namespace TelegramBot.Framework.Entities.Identifiers;

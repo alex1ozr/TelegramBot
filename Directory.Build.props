@@ -28,7 +28,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VersionPrefix>0.14.100</VersionPrefix>
+    <VersionPrefix>0.1.100</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)$(VersionSuffix)</Version>
     <Version Condition=" '$(VersionSuffix)' == '' ">$(VersionPrefix)</Version>
@@ -45,8 +45,6 @@
     <InternalsVisibleTo Include="$(CompanyPrefix).Framework.UnitTests" />
     <InternalsVisibleTo Include="$(CompanyPrefix).$(SolutionName).IntegrationTests" />
     <InternalsVisibleTo Include="$(CompanyPrefix).$(SolutionName).PerformanceTests" />
-    <InternalsVisibleTo Include="AuroraScienceHub.SWeather.Benchmarks" />
-    <InternalsVisibleTo Include="AuroraScienceHub.SWeather.UnitTests" />
   </ItemGroup>
 
   <!-- Automatically add dev packages to all projects -->

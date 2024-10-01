@@ -1,5 +1,5 @@
-using AuroraScienceHub.Framework.Entities.Identifiers;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using TelegramBot.Framework.Entities.Identifiers;
 
 namespace TelegramBot.Framework.EntityFramework.Identifiers;
 

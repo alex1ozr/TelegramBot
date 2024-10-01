@@ -1,4 +1,4 @@
-﻿namespace AuroraScienceHub.Framework.Entities;
+﻿namespace TelegramBot.Framework.Entities;
 
 /// <summary>
 /// Domain object with audit fields

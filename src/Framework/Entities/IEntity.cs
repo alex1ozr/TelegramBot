@@ -1,6 +1,6 @@
-﻿using AuroraScienceHub.Framework.Entities.Identifiers;
+﻿using TelegramBot.Framework.Entities.Identifiers;
 
-namespace AuroraScienceHub.Framework.Entities;
+namespace TelegramBot.Framework.Entities;
 
 /// <summary>
 /// Domain entity

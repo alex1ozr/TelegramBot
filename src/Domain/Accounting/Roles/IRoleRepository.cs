@@ -1,4 +1,4 @@
-﻿using AuroraScienceHub.Framework.Entities.Storage;
+﻿using TelegramBot.Framework.Entities;
 
 namespace TelegramBot.Domain.Accounting.Roles;
 

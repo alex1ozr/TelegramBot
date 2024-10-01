@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
-using AuroraScienceHub.Framework.Entities.Identifiers;
+using TelegramBot.Framework.Entities.Identifiers;
 
-namespace AuroraScienceHub.Framework.Entities.Storage;
+namespace TelegramBot.Framework.Entities;
 
 public interface IRepository<TEntity, TEntityId>
     where TEntity : class, IEntity<TEntityId>

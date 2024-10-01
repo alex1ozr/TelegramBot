@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HelpCommand" xml:space="preserve">
+    <value>&lt;b&gt;Welcome to SWeather bot (beta)!&lt;/b&gt;
+Stay updated on space weather with our bot. Here’s how you can get started:
+
+&lt;b&gt;Commands:&lt;/b&gt;
+
+- &lt;b&gt;/ovation_prime&lt;/b&gt;: Forecast &amp; Nowcast by Ovation Prime.
+- &lt;b&gt;/discussions&lt;/b&gt;: Get the latest space weather forecasts and discussions.
+- &lt;b&gt;/set_language&lt;/b&gt;: Set your preferred language for the bot.
+- &lt;b&gt;/policy&lt;/b&gt;: View our privacy policy.
+- &lt;b&gt;/donate&lt;/b&gt;: Support the bot’s development by donating Telegram stars.
+- &lt;b&gt;/help&lt;/b&gt;: See this list of commands and learn how to use the bot.
+
+&lt;b&gt;Connect with Us:&lt;/b&gt;
+
+- &lt;b&gt;Telegram Channel&lt;/b&gt;: &lt;a href="https://t.me/aurorasciencehub"&gt;Aurora Science Hub&lt;/a&gt;
+- &lt;b&gt;Telegram Chat&lt;/b&gt;: &lt;a href="https://t.me/+DBxLzqrDX0UxNTQy"&gt;Join the Conversation&lt;/a&gt;
+- &lt;b&gt;Email&lt;/b&gt;: &lt;a href="mailto:contact@aurorasciencehub.com"&gt;contact@aurorasciencehub.com&lt;/a&gt;
+
+Thank you for using SWeather bot! If you have any questions or need assistance, feel free to reach out.
+</value>
+  </data>
+  <data name="UnknownCommand" xml:space="preserve">
+    <value>Unrecognized command :(</value>
+  </data>
+  <data name="NoDataAvailable" xml:space="preserve">
+    <value>No data available at this moment</value>
+  </data>
+  <data name="NoaaForecastDiscussion" xml:space="preserve">
+    <value>NOAA 1-day forecast ({0} UTC):
+{1}
+
+Source: {2}</value>
+  </data>
+  <data name="DonateCommand" xml:space="preserve">
+    <value>Please select the option for your donate.</value>
+  </data>
+  <data name="DonationInvoiceDescription" xml:space="preserve">
+    <value>Your donation will help the service become better!</value>
+  </data>
+  <data name="CannotCreateInvoiceError" xml:space="preserve">
+    <value>Couldn't create Invoice.</value>
+  </data>
+  <data name="Donation" xml:space="preserve">
+    <value>Donation</value>
+  </data>
+  <data name="DonationDescription" xml:space="preserve">
+    <value>Donation of {0} {1}</value>
+  </data>
+  <data name="ThanksForSupportMessage" xml:space="preserve">
+    <value>Thank you for your support!</value>
+  </data>
+  <data name="SuccessfulRefundMessage" xml:space="preserve">
+    <value>Refund was successful.</value>
+  </data>
+  <data name="DiscussionsCommand" xml:space="preserve">
+    <value>Please select the option</value>
+  </data>
+  <data name="SidcForecastDiscussion" xml:space="preserve">
+    <value>SIDC Presto Alert ({0} UTC):
+{1}
+
+Source: {2}</value>
+  </data>
+  <data name="NoaaForecast27Discussion" xml:space="preserve">
+    <value>NOAA 27-days forecast ({0} UTC):
+{1}
+
+Source: {2}</value>
+  </data>
+  <data name="DiscussionCommandDescription" xml:space="preserve">
+    <value>Space weather forecasts and discussions</value>
+  </data>
+  <data name="IpgForecastDiscussion" xml:space="preserve">
+    <value>IPG 1-day forecast ({0} UTC):
+{1}
+
+Source: {2}</value>
+  </data>
+  <data name="SetUserLanguageCommand" xml:space="preserve">
+    <value>Please select the language</value>
+  </data>
+  <data name="UserLanguageWasSetIntoRussian" xml:space="preserve">
+    <value>Был установлен русский язык интерфейса</value>
+  </data>
+  <data name="UserLanguageWasSetIntoEnglish" xml:space="preserve">
+    <value>Language was set to English</value>
+  </data>
+  <data name="UserLanguageWasSetIntoAuto" xml:space="preserve">
+    <value>Language was set to Auto</value>
+  </data>
+  <data name="HelpCommandDescription" xml:space="preserve">
+    <value>The list of available commands and instructions on how to use the bot.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>*Privacy Policy for SWeather\.Bot*
+
+Welcome to SWeather\.Bot\!
+We value your privacy and are committed to protecting your personal data\.
+This privacy policy explains how we collect, use, and protect your data in compliance with the General Data Protection Regulation \(GDPR\)\.
+
+*1\. Information We Collect*
+\- *User Information*: We collect your Telegram user ID, username, and language preference to personalize your experience\.
+\- *Bot Usage Data*: We track your interactions with the bot, such as commands executed, to improve our services\.
+
+*2\. Legal Basis for Processing*
+\- *Performance of a Contract*: We process your data to provide the services offered by the bot\.
+\- *Legitimate Interests*: We use your data to enhance and secure our services\.
+\- *Consent*: Where applicable, we may request your consent for certain types of data processing\.
+
+*3\. How We Use Your Information*
+\- *Personalization*: To customize content in your preferred language\.
+\- *Service Improvement*: To analyze bot usage and improve functionality\.
+\- *Communication*: To inform you of updates or important information related to the bot\.
+
+*4\. Data Sharing*
+We *do not* sell, share, or distribute your personal data to third parties, except as required by law\.
+
+*5\. Data Retention*
+We retain your data only for as long as necessary to fulfill the purposes outlined in this policy or as required by law\. If you request deletion, we will promptly erase your data unless we are legally obliged to retain it\.
+
+*6\. Your Rights Under GDPR*
+You have the following rights concerning your personal data:
+\- *Right of Access*: You can request access to your personal data\.
+\- *Right to Rectification*: You can request corrections to your data if it is inaccurate or incomplete\.
+\- *Right to Erasure*: You can request the deletion of your data \("right to be forgotten"\)\.
+\- *Right to Restrict Processing*: You can request that we limit the processing of your data\.
+\- *Right to Data Portability*: You can request a copy of your data in a machine\-readable format\.
+\- *Right to Object*: You can object to the processing of your data based on legitimate interests\.
+\- *Right to Withdraw Consent*: If processing is based on consent, you can withdraw it at any time\.
+
+*7\. International Data Transfers*
+If we transfer your data outside the European Economic Area \(EEA\), we ensure it is protected by appropriate safeguards, such as standard contractual clauses approved by the European Commission\.
+
+*8\. Data Security*
+We employ appropriate technical and organizational measures to protect your data against unauthorized access, loss, or disclosure\. However, please note that no internet transmission is entirely secure\.
+
+*9\. Changes to This Policy*
+We may update this privacy policy from time to time\. Significant changes will be communicated through the bot or other appropriate means\.
+
+*10\. Contact Us*
+For any questions, concerns, or requests regarding your data or this privacy policy, please contact our Data Protection Officer at contact@aurorasciencehub\.com\.
+
+Thank you for trusting SWeather\.Bot\!</value>
+  </data>
+  <data name="OvationPrimeCommand" xml:space="preserve">
+    <value>Please select the option</value>
+  </data>
+  <data name="OvationPrimeNoaaForecast1H" xml:space="preserve">
+    <value>1-hour forecast</value>
+  </data>
+  <data name="OvationPrimeNoaaForecast1HCaption" xml:space="preserve">
+    <value>1-hour forecast for {0} MSK ({1} UTC)</value>
+  </data>
+  <data name="OvationPrimeNoaaNowcast" xml:space="preserve">
+    <value>Aurora now</value>
+  </data>
+  <data name="OvationPrimeNoaaNowcastCaption" xml:space="preserve">
+    <value>Aurora now</value>
+  </data>
+  <data name="OvationPrimeCommandDescription" xml:space="preserve">
+    <value>Forecast &amp; Nowcast by Ovation Prime</value>
+  </data>
+  <data name="CommandNotAllowedInGroups" xml:space="preserve">
+    <value>Command /{0} is not available in group chats</value>
+  </data>
+  <data name="BotStatistics" xml:space="preserve">
+    <value>&lt;b&gt;Bot statistics for {0}&lt;/b&gt;
+
+&lt;b&gt;Top commands:&lt;/b&gt;
+{1}
+
+Total: {2}
+
+&lt;b&gt;Top users:&lt;/b&gt;
+{3}
+
+&lt;b&gt;New users (+{4}, total: {5}):&lt;/b&gt;
+{6}</value>
+  </data>
+</root>

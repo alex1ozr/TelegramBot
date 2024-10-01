@@ -7,14 +7,6 @@
   <ItemGroup>
     <PackageVersion Include="App.Metrics.Abstractions" Version="4.3.0" />
     <PackageVersion Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.1" />
-    <PackageVersion Include="AuroraScienceHub.Framework.ClickHouse" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.Framework.Entities" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.Framework.EntityFramework" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.Framework.EntityFramework.NpgSql" Version="0.10.100" />
-    <PackageVersion Include="aurorasciencehub.framework.logging.opentelemetry" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.Framework.Utilities" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.SWeather.PopularScience.WebClient" Version="0.10.100" />
-    <PackageVersion Include="AuroraScienceHub.SWeather.Visualization.WebClient" Version="0.10.100" />
     <PackageVersion Include="AutoFixture.AutoMoq" Version="4.18.1" />
     <PackageVersion Include="ClickHouse.Client" Version="7.6.0" />
     <PackageVersion Include="Dapper" Version="2.1.35" />

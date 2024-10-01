@@ -1,8 +1,8 @@
 ﻿using System.Collections.Concurrent;
 using System.Reflection;
-using AuroraScienceHub.Framework.Entities.Identifiers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using TelegramBot.Framework.Entities.Identifiers;
 using TelegramBot.Framework.EntityFramework.Builders;
 using TelegramBot.Framework.Utilities.System;
 
