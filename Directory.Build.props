@@ -18,13 +18,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <CompanyName>AuroraScienceHub</CompanyName>
+    <CompanyName>AErmilov</CompanyName>
     <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
 
     <Copyright>Copyright $(CurrentYear) © $(CompanyName). All rights reserved</Copyright>
     <Authors>$(CompanyName)</Authors>
     <Company>$(CompanyName)</Company>
-    <CompanyPrefix>AuroraScienceHub</CompanyPrefix>
+    <CompanyPrefix>AErmilov</CompanyPrefix>
   </PropertyGroup>
 
   <PropertyGroup>

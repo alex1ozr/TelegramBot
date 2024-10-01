@@ -42,7 +42,7 @@ Runs the application (Telegram bot host service).
 dotnet tool install --global dotnet-ef
 
 # Create a new schema migration
-dotnet ef migrations add AddUserRoles -c DataContext -s src/Data/Data.csproj -o ./Engine/Migrations/Schema -v -- --CreateMigrationOnly
+dotnet ef migrations add Init -c DataContext -s src/Data/Data.csproj -o ./Engine/Migrations/Schema -v -- --CreateMigrationOnly
 ```
 
 ## Build
