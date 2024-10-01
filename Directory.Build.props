@@ -1,0 +1,61 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>False</IsPackable>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <WarningLevel>9999</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>$(NoWarn);</NoWarn>
+
+    <!-- Pack everything with embedded .pdb -->
+    <EmbedAllSources>true</EmbedAllSources>
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CompanyName>AuroraScienceHub</CompanyName>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+
+    <Copyright>Copyright $(CurrentYear) © $(CompanyName). All rights reserved</Copyright>
+    <Authors>$(CompanyName)</Authors>
+    <Company>$(CompanyName)</Company>
+    <CompanyPrefix>AuroraScienceHub</CompanyPrefix>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionPrefix>0.14.100</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <Version Condition=" '$(VersionSuffix)' != '' ">$(VersionPrefix)$(VersionSuffix)</Version>
+    <Version Condition=" '$(VersionSuffix)' == '' ">$(VersionPrefix)</Version>
+  </PropertyGroup>
+
+  <!--
+    This instruction automatically allows XXX.Tests to access internals of XXX.
+    Signed assemblies have to add friends manually because of public key requirement.
+  -->
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+    <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
+    <InternalsVisibleTo Include="$(CompanyPrefix).$(SolutionName).UnitTests" />
+    <InternalsVisibleTo Include="$(CompanyPrefix).Framework.UnitTests" />
+    <InternalsVisibleTo Include="$(CompanyPrefix).$(SolutionName).IntegrationTests" />
+    <InternalsVisibleTo Include="$(CompanyPrefix).$(SolutionName).PerformanceTests" />
+    <InternalsVisibleTo Include="AuroraScienceHub.SWeather.Benchmarks" />
+    <InternalsVisibleTo Include="AuroraScienceHub.SWeather.UnitTests" />
+  </ItemGroup>
+
+  <!-- Automatically add dev packages to all projects -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>
