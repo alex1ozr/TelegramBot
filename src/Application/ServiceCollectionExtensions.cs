@@ -52,7 +52,7 @@ public static class ServiceCollectionExtensions
         services.AddHostedService(provider =>
             (UpdateReceiver)provider.GetRequiredService<IUpdateReceiver>()
         );
-        services.AddHostedService<SWeatherBotSetup>();
+        services.AddHostedService<TelegramBotSetup>();
 
         services.AddInfrastructure();
         services.AddFeatures();

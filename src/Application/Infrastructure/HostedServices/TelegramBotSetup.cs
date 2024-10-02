@@ -12,15 +12,15 @@ using TelegramBot.Domain.Accounting;
 
 namespace TelegramBot.Application.Infrastructure.HostedServices;
 
-internal sealed class SWeatherBotSetup : IHostedService
+internal sealed class TelegramBotSetup : IHostedService
 {
     private readonly IBotMessageLocalizer _botMessageLocalizer;
-    private readonly ILogger<SWeatherBotSetup> _logger;
+    private readonly ILogger<TelegramBotSetup> _logger;
     private readonly ITelegramBotClient _client;
     private readonly IOptions<TelegramBotOptions> _options;
 
-    public SWeatherBotSetup(
-        ILogger<SWeatherBotSetup> logger,
+    public TelegramBotSetup(
+        ILogger<TelegramBotSetup> logger,
         ITelegramBotClient client,
         IOptions<TelegramBotOptions> options,
         IBotMessageLocalizer botMessageLocalizer)

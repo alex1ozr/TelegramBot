@@ -38,8 +38,8 @@ public static class ServiceCollectionExtensions
         var connection = configuration.GetRequiredOptions<ConnectionOptions>();
 
         var connectionString = UnexpectedException.ThrowIfNull(
-            connection.SpaceWeatherBot,
-            $"Connection string '{nameof(ConnectionOptions.SpaceWeatherBot)}' is not configured");
+            connection.TelegramBot,
+            $"Connection string '{nameof(ConnectionOptions.TelegramBot)}' is not configured");
     }
 
     private static void AddInterceptors(IServiceCollection services)

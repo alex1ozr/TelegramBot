@@ -9,6 +9,7 @@ using TelegramBot.Framework.ClickHouse;
 using TelegramBot.Framework.ClickHouse.Migrations;
 using TelegramBot.Framework.EntityFramework.Migrations;
 using TelegramBot.Host;
+using TelegramBot.ServiceDefaults;
 
 var loggerFactory = PrepareLogging();
 var logger = loggerFactory.CreateLogger<Program>();
@@ -23,7 +24,7 @@ builder.Configuration.AddJsonFile("appsettings.defaults.json");
 
 var serviceName = builder.Configuration["Host:Name"] ?? "unknown-service";
 ConfigureServices(builder.Services, builder.Configuration);
-//builder.AddServiceDefaults(logger, serviceName, customMeterNames: ["sweather_bot"]);
+builder.AddServiceDefaults(logger, serviceName, customMeterNames: ["telegram_bot"]);
 
 try
 {
@@ -80,7 +81,7 @@ static void ConfigureServices(
 
 static void ConfigureWebApplication(WebApplication app)
 {
-    //app.MapDefaultEndpoints();
+    app.MapDefaultEndpoints();
     app.UseForwardedHeaders();
 
     app.UseHealthChecks("/health",
@@ -93,7 +94,6 @@ static void ConfigureWebApplication(WebApplication app)
     app.UseHttpLogging();
     app.MapControllers();
 }
-
 
 static void RegisterCommonServices(IServiceCollection services)
 {

@@ -7,9 +7,9 @@ namespace TelegramBot.Data.Engine.Configuration;
 /// </summary>
 public sealed class ConnectionOptions : IConnectionOptions
 {
-    public string? SpaceWeatherBot { get; set; }
+    public string? TelegramBot { get; set; }
 
     public string GetConnectionString() =>
-        SpaceWeatherBot
-        ?? throw new ArgumentException($"Connection string «{nameof(SpaceWeatherBot)}» not found");
+        TelegramBot
+        ?? throw new ArgumentException($"Connection string «{nameof(TelegramBot)}» not found");
 }
