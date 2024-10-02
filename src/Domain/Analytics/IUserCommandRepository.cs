@@ -5,7 +5,7 @@ namespace TelegramBot.Domain.Analytics;
 /// <summary>
 /// User commands repository
 /// </summary>
-public interface IUserCommandRepository: IRepository<UserCommand, UserCommandId>
+public interface IUserCommandRepository : IRepository<UserCommand, UserCommandId>
 {
     /// <summary>
     /// Get top 10 commands executed by users for the specified period

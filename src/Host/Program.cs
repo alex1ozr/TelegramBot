@@ -101,7 +101,7 @@ static void RegisterCommonServices(IServiceCollection services)
 static async Task PrepareDatabase(ILoggerFactory loggerFactory)
 {
     var logger = loggerFactory.CreateLogger("TelegramBotDbMigration");
-    await DatabaseMigrationManager.MigrateAsync<DataContextFactory>( logger)
+    await DatabaseMigrationManager.MigrateAsync<DataContextFactory>(logger)
         .ConfigureAwait(false);
 }
 

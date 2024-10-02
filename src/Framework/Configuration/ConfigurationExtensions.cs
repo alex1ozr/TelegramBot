@@ -4,9 +4,7 @@ using TelegramBot.Framework.Utilities.System;
 namespace TelegramBot.Framework.Configuration;
 
 /// <summary>
-/// Extensions for <see>
-///     <cref>IConfiguration</cref>
-/// </see>
+/// Extensions for <see cref="IConfiguration"/>
 /// </summary>
 public static class ConfigurationExtensions
 {
