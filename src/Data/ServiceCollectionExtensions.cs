@@ -52,7 +52,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddTransientAsImplementedInterfaces<UserRepository>();
         services.AddTransientAsImplementedInterfaces<RoleRepository>();
-        services.AddTransientAsImplementedInterfaces<UserAnalyticsRepository>();
+        services.AddTransientAsImplementedInterfaces<UserCommandRepository>();
         services.AddTransientAsImplementedInterfaces<InvoiceRepository>();
     }
 }

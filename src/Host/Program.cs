@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.HttpOverrides;
 using TelegramBot.Application;
 using TelegramBot.Data;
 using TelegramBot.Data.Engine.Migrations;
-using TelegramBot.Framework.ClickHouse;
-using TelegramBot.Framework.ClickHouse.Migrations;
 using TelegramBot.Framework.EntityFramework.Migrations;
 using TelegramBot.Host;
 using TelegramBot.ServiceDefaults;
@@ -31,7 +29,7 @@ try
     logger.LogInformation("Starting application...");
     var app = builder.Build();
 
-    await PrepareDatabase(builder.Configuration, loggerFactory, app.Services)
+    await PrepareDatabase(loggerFactory)
         .ConfigureAwait(false);
 
     ConfigureWebApplication(app);
@@ -74,7 +72,6 @@ static void ConfigureServices(
     RegisterCommonServices(services);
     services.AddBotApplication(configuration);
     services.AddData(configuration);
-    services.AddClickHouse();
 
     services.AddHostedService<BotBackgroundService>();
 }
@@ -101,14 +98,10 @@ static void RegisterCommonServices(IServiceCollection services)
     services.AddHttpContextAccessor();
 }
 
-static async Task PrepareDatabase(IConfiguration configuration, ILoggerFactory loggerFactory, IServiceProvider serviceProvider)
+static async Task PrepareDatabase(ILoggerFactory loggerFactory)
 {
-    var logger = loggerFactory.CreateLogger("SpaceWeatherBotDbMigration");
+    var logger = loggerFactory.CreateLogger("TelegramBotDbMigration");
     await DatabaseMigrationManager.MigrateAsync<DataContextFactory>( logger)
-        .ConfigureAwait(false);
-
-    var clickHouseMigration = serviceProvider.GetRequiredService<IClickHouseMigrationRunner>();
-    await clickHouseMigration.MigrateFromAssemblyAsync(typeof(DataContextFactory).Assembly)
         .ConfigureAwait(false);
 }
 

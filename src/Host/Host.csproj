@@ -14,7 +14,6 @@
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\Data\Data.csproj" />
-      <ProjectReference Include="..\Framework\ClickHouse\ClickHouse.csproj" />
       <ProjectReference Include="..\ServiceDefaults\ServiceDefaults.csproj" />
     </ItemGroup>
   

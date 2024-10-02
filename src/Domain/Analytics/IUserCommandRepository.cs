@@ -1,20 +1,12 @@
-using TelegramBot.Domain.Accounting.Users;
+using TelegramBot.Framework.Entities;
 
 namespace TelegramBot.Domain.Analytics;
 
 /// <summary>
-/// User analytics repository
+/// User commands repository
 /// </summary>
-public interface IUserAnalyticsRepository
+public interface IUserCommandRepository: IRepository<UserCommand, UserCommandId>
 {
-    /// <summary>
-    /// Save information about command executed by user
-    /// </summary>
-    Task SaveUserCommandAsync(
-        UserId userId,
-        string command,
-        CancellationToken cancellationToken);
-
     /// <summary>
     /// Get top 10 commands executed by users for the specified period
     /// </summary>

@@ -7,6 +7,6 @@ partial class SWeatherBot
     protected override async Task OnPreCheckoutQueryAsync(PreCheckoutQuery pQuery, CancellationToken cancellationToken)
     {
         // We accept all pre-checkout queries
-        await PaymentsExtensions.AnswerPreCheckoutQueryAsync(_client, pQuery.Id, true, cancellationToken: cancellationToken);
+        await _client.AnswerPreCheckoutQueryAsync(pQuery.Id, true, cancellationToken: cancellationToken);
     }
 }

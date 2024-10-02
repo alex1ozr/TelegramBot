@@ -17,14 +17,14 @@ internal sealed class StatsBotCommandHandler : IRequestHandler<StatsBotCommand, 
 
     private readonly ITelegramBotClient _telegramBotClient;
     private readonly IBotMessageLocalizer _botMessageLocalizer;
-    private readonly IUserAnalyticsRepository _userAnalyticsRepository;
+    private readonly IUserCommandRepository _userAnalyticsRepository;
     private readonly IUserRepository _userRepository;
     private readonly TimeProvider _timeProvider;
 
     public StatsBotCommandHandler(
         ITelegramBotClient telegramBotClient,
         IBotMessageLocalizer botMessageLocalizer,
-        IUserAnalyticsRepository userAnalyticsRepository,
+        IUserCommandRepository userAnalyticsRepository,
         IUserRepository userRepository,
         TimeProvider timeProvider)
     {

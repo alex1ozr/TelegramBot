@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using TelegramBot.Domain.Accounting.Roles;
 using TelegramBot.Domain.Accounting.Users;
+using TelegramBot.Domain.Analytics;
 using TelegramBot.Domain.Billing.Invoices;
 using TelegramBot.Framework.EntityFramework;
 using TelegramBot.Framework.EntityFramework.Identifiers;
@@ -21,6 +22,8 @@ public sealed class DataContext : DbContext, IDataContext
     public DbSet<Role> Roles => Set<Role>();
 
     public DbSet<Invoice> Invoices => Set<Invoice>();
+
+    public DbSet<UserCommand> UserCommands => Set<UserCommand>();
 
     public DataContext(
         DbContextOptions<DataContext> options,

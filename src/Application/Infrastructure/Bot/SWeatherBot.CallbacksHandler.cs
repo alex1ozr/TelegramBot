@@ -15,7 +15,7 @@ partial class SWeatherBot
         var args = cQuery.Data?.Split(' ') ?? [];
         if (cQuery.Message == null || args.Length == 0)
         {
-            await AvailableMethodsExtensions.AnswerCallbackQueryAsync(_client, cQuery.Id,
+            await _client.AnswerCallbackQueryAsync(cQuery.Id,
                 "This button is no longer available",
                 true,
                 cacheTime: InvalidCallbackQueryCacheTime, cancellationToken: cancellationToken);
@@ -33,7 +33,7 @@ partial class SWeatherBot
 
         if (callbackCommand is not UnknownCallbackCommand)
         {
-            await AvailableMethodsExtensions.AnswerCallbackQueryAsync(_client, cQuery.Id, cacheTime: 2, cancellationToken: cancellationToken);
+            await _client.AnswerCallbackQueryAsync(cQuery.Id, cacheTime: 2, cancellationToken: cancellationToken);
             await _mediator.Send(callbackCommand, cancellationToken);
 
             _metrics.IncreaseCommandsExecuted();
@@ -42,7 +42,7 @@ partial class SWeatherBot
         }
         else
         {
-            await AvailableMethodsExtensions.AnswerCallbackQueryAsync(_client, cQuery.Id, "???", cacheTime: 999, cancellationToken: cancellationToken);
+            await _client.AnswerCallbackQueryAsync(cQuery.Id, "???", cacheTime: 999, cancellationToken: cancellationToken);
         }
     }
 }
