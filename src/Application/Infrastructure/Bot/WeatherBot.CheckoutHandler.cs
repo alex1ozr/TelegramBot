@@ -2,7 +2,7 @@
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-partial class SWeatherBot
+partial class WeatherBot
 {
     protected override async Task OnPreCheckoutQueryAsync(PreCheckoutQuery pQuery, CancellationToken cancellationToken)
     {

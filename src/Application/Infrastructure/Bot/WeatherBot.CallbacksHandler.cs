@@ -6,7 +6,7 @@ using TelegramBot.Framework.Utilities.System;
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-partial class SWeatherBot
+partial class WeatherBot
 {
     private const int InvalidCallbackQueryCacheTime = 99_999;
 

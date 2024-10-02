@@ -11,7 +11,7 @@ using TelegramBot.Framework.Utilities.System;
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-partial class SWeatherBot
+partial class WeatherBot
 {
     protected override async Task OnCommandAsync(
         Message message,

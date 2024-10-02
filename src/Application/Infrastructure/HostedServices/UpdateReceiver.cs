@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Telegram.BotAPI.GettingUpdates;
-using SWeatherBot = TelegramBot.Application.Infrastructure.Bot.SWeatherBot;
+using TelegramBot.Application.Infrastructure.Bot;
 
 namespace TelegramBot.Application.Infrastructure.HostedServices;
 
@@ -14,8 +14,8 @@ internal sealed class UpdateReceiver :
         IUpdateReceiver
 {
     private readonly ActivitySource _activitySource =
-        new(typeof(SWeatherBot).Assembly.GetName().Name!,
-            typeof(SWeatherBot).Assembly.GetName().Version!.ToString());
+        new(typeof(WeatherBot).Assembly.GetName().Name!,
+            typeof(WeatherBot).Assembly.GetName().Version!.ToString());
 
     private readonly Channel<Update> _updates = Channel.CreateUnbounded<Update>();
     private readonly ILogger<UpdateReceiver> _logger;
@@ -75,7 +75,7 @@ internal sealed class UpdateReceiver :
 
         try
         {
-            var bot = scope.ServiceProvider.GetRequiredService<SWeatherBot>();
+            var bot = scope.ServiceProvider.GetRequiredService<WeatherBot>();
             await bot.OnUpdateAsync(update);
         }
         catch (Exception e)

@@ -12,7 +12,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HelpCommand" xml:space="preserve">
-    <value>&lt;b&gt;Добро пожаловать в SWeather bot (beta)!&lt;/b&gt;  
+    <value>&lt;b&gt;Добро пожаловать в Weather bot!&lt;/b&gt;
 Будьте в курсе космической погоды с нашим ботом.
 
 &lt;b&gt;Команды:&lt;/b&gt;
@@ -25,12 +25,9 @@
 - &lt;b&gt;/help&lt;/b&gt;: Посмотреть этот список команд и узнать, как пользоваться ботом.
 
 &lt;b&gt;Связь с нами:&lt;/b&gt;
+^_^
 
-- &lt;b&gt;Канал Telegram&lt;/b&gt;: &lt;a href="https://t.me/aurorasciencehub"&gt;Aurora Science Hub&lt;/a&gt;
-- &lt;b&gt;Чат в Telegram&lt;/b&gt;: &lt;a href="https://t.me/+DBxLzqrDX0UxNTQy"&gt;Присоединиться к беседе&lt;/a&gt;
-- &lt;b&gt;Email&lt;/b&gt;: &lt;a href="mailto:contact@aurorasciencehub.com"&gt;contact@aurorasciencehub.com&lt;/a&gt;
-
-Спасибо за использование SWeather bot! Если у Вас есть вопросы или нужна помощь, не стесняйтесь обращаться к нам.
+Спасибо за использование Weather bot! Если у Вас есть вопросы или нужна помощь, не стесняйтесь обращаться к нам.
 </value>
   </data>
   <data name="UnknownCommand" xml:space="preserve">
@@ -106,9 +103,9 @@
     <value>Список доступных команд и инструкции по использованию бота.</value>
   </data>
   <data name="PrivacyPolicy" xml:space="preserve">
-    <value>*Политика конфиденциальности для SWeather\.Bot*
+    <value>*Политика конфиденциальности для Weather\.Bot*
 
-Добро пожаловать в SWeather\.Bot\!
+Добро пожаловать в Weather\.Bot\!
 Мы ценим вашу конфиденциальность и обязуемся защищать ваши личные данные\.
 Эта политика конфиденциальности объясняет, как мы собираем, используем и защищаем ваши данные в соответствии с Общим положением о защите данных \(GDPR\)\.
 
@@ -152,9 +149,9 @@
 Мы можем время от времени обновлять эту политику конфиденциальности\. О существенных изменениях мы будем сообщать через бот или другими соответствующими способами\.
 
 *10\. Связаться с нами*
-По всем вопросам, проблемам или запросам, касающимся ваших данных или данной политики конфиденциальности, обращайтесь к нашему специалисту по защите данных по адресу contact@aurorasciencehub\.com\.
+По всем вопросам, проблемам или запросам, касающимся ваших данных или данной политики конфиденциальности, обращайтесь к нашему специалисту по защите данных по адресу contact@xxx\.xxx\.
 
-Спасибо, что доверяете SWeather\.Bot\!</value>
+Спасибо, что доверяете Weather\.Bot\!</value>
   </data>
   <data name="OvationPrimeCommand" xml:space="preserve">
     <value>Пожалуйста, выберите опцию</value>

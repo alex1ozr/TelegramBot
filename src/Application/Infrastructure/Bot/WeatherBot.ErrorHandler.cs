@@ -3,7 +3,7 @@ using Telegram.BotAPI;
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-partial class SWeatherBot
+partial class WeatherBot
 {
     protected override Task OnBotExceptionAsync(BotRequestException exp, CancellationToken cancellationToken)
     {

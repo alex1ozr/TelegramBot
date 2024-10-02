@@ -9,7 +9,6 @@ using TelegramBot.Application.Infrastructure.Bot;
 using TelegramBot.Application.Infrastructure.Bot.Commands;
 using TelegramBot.Application.Infrastructure.HostedServices;
 using TelegramBot.Application.Infrastructure.Localization;
-using SWeatherBot = TelegramBot.Application.Infrastructure.Bot.SWeatherBot;
 
 namespace TelegramBot.Application;
 
@@ -44,7 +43,7 @@ public static class ServiceCollectionExtensions
 
         services.AddMemoryCache();
 
-        services.AddScoped<SWeatherBot>();
+        services.AddScoped<WeatherBot>();
 
         services.AddSingleton<IUpdateReceiver, UpdateReceiver>();
 
@@ -62,7 +61,7 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(SWeatherBot).Assembly));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(WeatherBot).Assembly));
 
         services.TryAddSingleton<IBotMessageLocalizer, BotMessageLocalizer>();
         services.TryAddSingleton<ApplicationMetrics>();

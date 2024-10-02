@@ -19,7 +19,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HelpCommand" xml:space="preserve">
-    <value>&lt;b&gt;Welcome to SWeather bot (beta)!&lt;/b&gt;
+    <value>&lt;b&gt;Welcome to Weather bot!&lt;/b&gt;
 Stay updated on space weather with our bot. Here’s how you can get started:
 
 &lt;b&gt;Commands:&lt;/b&gt;
@@ -32,12 +32,9 @@ Stay updated on space weather with our bot. Here’s how you can get started:
 - &lt;b&gt;/help&lt;/b&gt;: See this list of commands and learn how to use the bot.
 
 &lt;b&gt;Connect with Us:&lt;/b&gt;
+^_^
 
-- &lt;b&gt;Telegram Channel&lt;/b&gt;: &lt;a href="https://t.me/aurorasciencehub"&gt;Aurora Science Hub&lt;/a&gt;
-- &lt;b&gt;Telegram Chat&lt;/b&gt;: &lt;a href="https://t.me/+DBxLzqrDX0UxNTQy"&gt;Join the Conversation&lt;/a&gt;
-- &lt;b&gt;Email&lt;/b&gt;: &lt;a href="mailto:contact@aurorasciencehub.com"&gt;contact@aurorasciencehub.com&lt;/a&gt;
-
-Thank you for using SWeather bot! If you have any questions or need assistance, feel free to reach out.
+Thank you for using Weather bot! If you have any questions or need assistance, feel free to reach out.
 </value>
   </data>
   <data name="UnknownCommand" xml:space="preserve">
@@ -113,9 +110,9 @@ Source: {2}</value>
     <value>The list of available commands and instructions on how to use the bot.</value>
   </data>
   <data name="PrivacyPolicy" xml:space="preserve">
-    <value>*Privacy Policy for SWeather\.Bot*
+    <value>*Privacy Policy for Weather\.Bot*
 
-Welcome to SWeather\.Bot\!
+Welcome to Weather\.Bot\!
 We value your privacy and are committed to protecting your personal data\.
 This privacy policy explains how we collect, use, and protect your data in compliance with the General Data Protection Regulation \(GDPR\)\.
 
@@ -159,9 +156,9 @@ We employ appropriate technical and organizational measures to protect your data
 We may update this privacy policy from time to time\. Significant changes will be communicated through the bot or other appropriate means\.
 
 *10\. Contact Us*
-For any questions, concerns, or requests regarding your data or this privacy policy, please contact our Data Protection Officer at contact@aurorasciencehub\.com\.
+For any questions, concerns, or requests regarding your data or this privacy policy, please contact our Data Protection Officer at xxx@xxx\.com\.
 
-Thank you for trusting SWeather\.Bot\!</value>
+Thank you for trusting Weather\.Bot\!</value>
   </data>
   <data name="OvationPrimeCommand" xml:space="preserve">
     <value>Please select the option</value>

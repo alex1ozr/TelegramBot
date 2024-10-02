@@ -3,7 +3,7 @@ using TelegramBot.Application.Features.Billing.Payments;
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-partial class SWeatherBot
+partial class WeatherBot
 {
     protected override async Task OnMessageAsync(
         Message message,

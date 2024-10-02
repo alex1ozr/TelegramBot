@@ -10,7 +10,7 @@ using TelegramBot.Application.Infrastructure.Localization;
 
 namespace TelegramBot.Application.Infrastructure.Bot;
 
-internal sealed partial class SWeatherBot : SimpleTelegramBotBase
+internal sealed partial class WeatherBot : SimpleTelegramBotBase
 {
     private static User? s_me;
 
@@ -19,11 +19,11 @@ internal sealed partial class SWeatherBot : SimpleTelegramBotBase
     private readonly IBotCommandFactory _commandFactory;
     private readonly ApplicationMetrics _metrics;
     private readonly IBotMessageLocalizer _botMessageLocalizer;
-    private readonly ILogger<TelegramBot.Application.Infrastructure.Bot.SWeatherBot> _logger;
+    private readonly ILogger<WeatherBot> _logger;
     private readonly ITelegramBotClient _client;
 
-    public SWeatherBot(
-        ILogger<TelegramBot.Application.Infrastructure.Bot.SWeatherBot> logger,
+    public WeatherBot(
+        ILogger<WeatherBot> logger,
         IOptions<TelegramBotOptions> options,
         ITelegramBotClient client,
         IServiceProvider serviceProvider,

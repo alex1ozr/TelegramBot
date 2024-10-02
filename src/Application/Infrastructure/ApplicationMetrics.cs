@@ -4,7 +4,7 @@ namespace TelegramBot.Application.Infrastructure;
 
 internal sealed class ApplicationMetrics
 {
-    private const string MeterName = "sweather_bot";
+    private const string MeterName = "telegram_bot";
     private readonly Counter<long> _commandsExecuted;
     private readonly Counter<long> _commandsFailed;
     private readonly Counter<long> _usersCreated;

@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <AssemblyName>TelegramBot.ServiceDefaults</AssemblyName>
+        <IsAspireHost>true</IsAspireHost>
+        <UserSecretsId>d5d972e1-40c7-44c3-a7bd-5f08480a4ddf</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Aspire.Hosting.AppHost" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Host\Host.csproj" />
+    </ItemGroup>
+
+</Project>

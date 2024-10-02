@@ -4,16 +4,4 @@
     <RootNamespace>$(AssemblyName)</RootNamespace>
   </PropertyGroup>
 
-  <!--
-    This instruction automatically adds additional properties to packable projects.
-  -->
-  <PropertyGroup Condition="'$(IsPackable)' == 'True'">
-    <PackageProjectUrl>https://github.com/Aurora-Science-Hub/SWeather-bot</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Aurora-Science-Hub/SWeather-bot.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PublishRepositoryUrl>True</PublishRepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>Science;Aurora;Telegram;Bot</PackageTags>
-  </PropertyGroup>
-
 </Project>
