@@ -13,12 +13,11 @@
   </resheader>
   <data name="HelpCommand" xml:space="preserve">
     <value>&lt;b&gt;Добро пожаловать в Weather bot!&lt;/b&gt;
-Будьте в курсе космической погоды с нашим ботом.
+Будьте в курсе погоды с нашим ботом.
 
 &lt;b&gt;Команды:&lt;/b&gt;
 
-- &lt;b&gt;/ovation_prime&lt;/b&gt;: Прогноз и мониторинг сияний (Ovation Prime)
-- &lt;b&gt;/discussions&lt;/b&gt;: Получить последние прогнозы и обсуждения космической погоды.
+- &lt;b&gt;/weather&lt;/b&gt;: Текущая погода в различных городах.
 - &lt;b&gt;/set_language&lt;/b&gt;: Установить предпочитаемый язык для бота.
 - &lt;b&gt;/policy&lt;/b&gt;: Ознакомиться с политикой конфиденциальности.
 - &lt;b&gt;/donate&lt;/b&gt;: Поддержать развитие бота, пожертвовав Telegram звёзды.
@@ -35,12 +34,6 @@
   </data>
   <data name="NoDataAvailable" xml:space="preserve">
     <value>Нет данных на текущий момент</value>
-  </data>
-  <data name="NoaaForecastDiscussion" xml:space="preserve">
-    <value>Обзор NOAA на 1 день ({0} UTC):
-{1}
-
-Источник: {2}</value>
   </data>
   <data name="DonateCommand" xml:space="preserve">
     <value>Пожалуйста, выберите опцию для пожертвования.</value>
@@ -62,30 +55,6 @@
   </data>
   <data name="SuccessfulRefundMessage" xml:space="preserve">
     <value>Возврат средств был успешно проведён.</value>
-  </data>
-  <data name="DiscussionsCommand" xml:space="preserve">
-    <value>Пожалуйста, выберите опцию</value>
-  </data>
-  <data name="SidcForecastDiscussion" xml:space="preserve">
-    <value>Обзор SIDC Presto ({0} UTC):
-{1}
-
-Источник: {2}</value>
-  </data>
-  <data name="NoaaForecast27Discussion" xml:space="preserve">
-    <value>Обзор NOAA на 27 дней ({0} UTC):
-{1}
-
-Источник: {2}</value>
-  </data>
-  <data name="DiscussionCommandDescription" xml:space="preserve">
-    <value>Обзоры и прогнозы космической погоды</value>
-  </data>
-  <data name="IpgForecastDiscussion" xml:space="preserve">
-    <value>Обзор ФГБУ "ИПГ" на 1 день ({0} UTC):
-{1}
-
-Источник: {2}</value>
   </data>
   <data name="SetUserLanguageCommand" xml:space="preserve">
     <value>Пожалуйста, выберите язык</value>
@@ -153,24 +122,6 @@
 
 Спасибо, что доверяете Weather\.Bot\!</value>
   </data>
-  <data name="OvationPrimeCommand" xml:space="preserve">
-    <value>Пожалуйста, выберите опцию</value>
-  </data>
-  <data name="OvationPrimeNoaaForecast1H" xml:space="preserve">
-    <value>Прогноз на 1ч</value>
-  </data>
-  <data name="OvationPrimeNoaaForecast1HCaption" xml:space="preserve">
-    <value>Прогноз на 1ч {0} МСК ({1} UTC)</value>
-  </data>
-  <data name="OvationPrimeNoaaNowcast" xml:space="preserve">
-    <value>Сияние сейчас</value>
-  </data>
-  <data name="OvationPrimeNoaaNowcastCaption" xml:space="preserve">
-    <value>Сияние сейчас</value>
-  </data>
-  <data name="OvationPrimeCommandDescription" xml:space="preserve">
-    <value>Прогноз и мониторинг сияний (Ovation Prime)</value>
-  </data>
   <data name="CommandNotAllowedInGroups" xml:space="preserve">
     <value>Команда /{0} недоступна в групповых чатах</value>
   </data>
@@ -187,5 +138,20 @@
 
 &lt;b&gt;Новые пользователи (+{4}, всего: {5}):&lt;/b&gt;
 {6}</value>
+  </data>
+  <data name="CurrentWeatherMessage" xml:space="preserve">
+    <value>Текущая температура в г. {0}: {1} C</value>
+  </data>
+  <data name="WeatherCommand" xml:space="preserve">
+    <value>Пожалуйста, выберите город</value>
+  </data>
+  <data name="NewYorkCity" xml:space="preserve">
+    <value>Нью-Йорк</value>
+  </data>
+  <data name="ParisCity" xml:space="preserve">
+    <value>Париж</value>
+  </data>
+  <data name="WeatherCommandDescription" xml:space="preserve">
+    <value>Текущая погода</value>
   </data>
 </root>

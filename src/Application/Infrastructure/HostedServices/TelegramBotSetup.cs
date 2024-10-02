@@ -5,6 +5,7 @@ using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
 using Telegram.BotAPI.GettingUpdates;
 using TelegramBot.Application.Features.Bot;
+using TelegramBot.Application.Features.Weather;
 using TelegramBot.Application.Infrastructure.Bot;
 using TelegramBot.Application.Infrastructure.Localization;
 using TelegramBot.Application.Resources;
@@ -66,6 +67,9 @@ internal sealed class TelegramBotSetup : IHostedService
         // default (en)
         await _client.SetMyCommandsAsync(
             [
+                new(WeatherBotCommand.CommandName,
+                    _botMessageLocalizer
+                        .GetLocalizedString(nameof(BotMessages.WeatherCommandDescription), BotLanguage.English)),
                 new(HelpBotCommand.CommandName,
                     _botMessageLocalizer
                         .GetLocalizedString(nameof(BotMessages.HelpCommandDescription), BotLanguage.English)),
@@ -75,6 +79,9 @@ internal sealed class TelegramBotSetup : IHostedService
         // ru
         await _client.SetMyCommandsAsync(
             [
+                new(WeatherBotCommand.CommandName,
+                    _botMessageLocalizer
+                        .GetLocalizedString(nameof(BotMessages.WeatherCommandDescription), BotLanguage.Russian)),
                 new(HelpBotCommand.CommandName,
                     _botMessageLocalizer
                         .GetLocalizedString(nameof(BotMessages.HelpCommandDescription), BotLanguage.Russian)),

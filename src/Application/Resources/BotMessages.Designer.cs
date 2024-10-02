@@ -63,12 +63,6 @@ namespace TelegramBot.Application.Resources {
             }
         }
         
-        internal static string NoaaForecastDiscussion {
-            get {
-                return ResourceManager.GetString("NoaaForecastDiscussion", resourceCulture);
-            }
-        }
-        
         internal static string DonateCommand {
             get {
                 return ResourceManager.GetString("DonateCommand", resourceCulture);
@@ -111,36 +105,6 @@ namespace TelegramBot.Application.Resources {
             }
         }
         
-        internal static string DiscussionsCommand {
-            get {
-                return ResourceManager.GetString("DiscussionsCommand", resourceCulture);
-            }
-        }
-        
-        internal static string SidcForecastDiscussion {
-            get {
-                return ResourceManager.GetString("SidcForecastDiscussion", resourceCulture);
-            }
-        }
-        
-        internal static string NoaaForecast27Discussion {
-            get {
-                return ResourceManager.GetString("NoaaForecast27Discussion", resourceCulture);
-            }
-        }
-        
-        internal static string DiscussionCommandDescription {
-            get {
-                return ResourceManager.GetString("DiscussionCommandDescription", resourceCulture);
-            }
-        }
-        
-        internal static string IpgForecastDiscussion {
-            get {
-                return ResourceManager.GetString("IpgForecastDiscussion", resourceCulture);
-            }
-        }
-        
         internal static string SetUserLanguageCommand {
             get {
                 return ResourceManager.GetString("SetUserLanguageCommand", resourceCulture);
@@ -177,42 +141,6 @@ namespace TelegramBot.Application.Resources {
             }
         }
         
-        internal static string OvationPrimeCommand {
-            get {
-                return ResourceManager.GetString("OvationPrimeCommand", resourceCulture);
-            }
-        }
-        
-        internal static string OvationPrimeNoaaForecast1H {
-            get {
-                return ResourceManager.GetString("OvationPrimeNoaaForecast1H", resourceCulture);
-            }
-        }
-        
-        internal static string OvationPrimeNoaaForecast1HCaption {
-            get {
-                return ResourceManager.GetString("OvationPrimeNoaaForecast1HCaption", resourceCulture);
-            }
-        }
-        
-        internal static string OvationPrimeNoaaNowcast {
-            get {
-                return ResourceManager.GetString("OvationPrimeNoaaNowcast", resourceCulture);
-            }
-        }
-        
-        internal static string OvationPrimeNoaaNowcastCaption {
-            get {
-                return ResourceManager.GetString("OvationPrimeNoaaNowcastCaption", resourceCulture);
-            }
-        }
-        
-        internal static string OvationPrimeCommandDescription {
-            get {
-                return ResourceManager.GetString("OvationPrimeCommandDescription", resourceCulture);
-            }
-        }
-        
         internal static string CommandNotAllowedInGroups {
             get {
                 return ResourceManager.GetString("CommandNotAllowedInGroups", resourceCulture);
@@ -222,6 +150,36 @@ namespace TelegramBot.Application.Resources {
         internal static string BotStatistics {
             get {
                 return ResourceManager.GetString("BotStatistics", resourceCulture);
+            }
+        }
+        
+        internal static string CurrentWeatherMessage {
+            get {
+                return ResourceManager.GetString("CurrentWeatherMessage", resourceCulture);
+            }
+        }
+        
+        internal static string WeatherCommand {
+            get {
+                return ResourceManager.GetString("WeatherCommand", resourceCulture);
+            }
+        }
+        
+        internal static string NewYorkCity {
+            get {
+                return ResourceManager.GetString("NewYorkCity", resourceCulture);
+            }
+        }
+        
+        internal static string ParisCity {
+            get {
+                return ResourceManager.GetString("ParisCity", resourceCulture);
+            }
+        }
+        
+        internal static string WeatherCommandDescription {
+            get {
+                return ResourceManager.GetString("WeatherCommandDescription", resourceCulture);
             }
         }
     }

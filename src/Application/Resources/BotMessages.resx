@@ -20,12 +20,11 @@
   </resheader>
   <data name="HelpCommand" xml:space="preserve">
     <value>&lt;b&gt;Welcome to Weather bot!&lt;/b&gt;
-Stay updated on space weather with our bot. Here’s how you can get started:
+Stay updated on weather with our bot. Here’s how you can get started:
 
 &lt;b&gt;Commands:&lt;/b&gt;
 
-- &lt;b&gt;/ovation_prime&lt;/b&gt;: Forecast &amp; Nowcast by Ovation Prime.
-- &lt;b&gt;/discussions&lt;/b&gt;: Get the latest space weather forecasts and discussions.
+- &lt;b&gt;/weather&lt;/b&gt;: Current weather in the specified city.
 - &lt;b&gt;/set_language&lt;/b&gt;: Set your preferred language for the bot.
 - &lt;b&gt;/policy&lt;/b&gt;: View our privacy policy.
 - &lt;b&gt;/donate&lt;/b&gt;: Support the bot’s development by donating Telegram stars.
@@ -42,12 +41,6 @@ Thank you for using Weather bot! If you have any questions or need assistance, f
   </data>
   <data name="NoDataAvailable" xml:space="preserve">
     <value>No data available at this moment</value>
-  </data>
-  <data name="NoaaForecastDiscussion" xml:space="preserve">
-    <value>NOAA 1-day forecast ({0} UTC):
-{1}
-
-Source: {2}</value>
   </data>
   <data name="DonateCommand" xml:space="preserve">
     <value>Please select the option for your donate.</value>
@@ -69,30 +62,6 @@ Source: {2}</value>
   </data>
   <data name="SuccessfulRefundMessage" xml:space="preserve">
     <value>Refund was successful.</value>
-  </data>
-  <data name="DiscussionsCommand" xml:space="preserve">
-    <value>Please select the option</value>
-  </data>
-  <data name="SidcForecastDiscussion" xml:space="preserve">
-    <value>SIDC Presto Alert ({0} UTC):
-{1}
-
-Source: {2}</value>
-  </data>
-  <data name="NoaaForecast27Discussion" xml:space="preserve">
-    <value>NOAA 27-days forecast ({0} UTC):
-{1}
-
-Source: {2}</value>
-  </data>
-  <data name="DiscussionCommandDescription" xml:space="preserve">
-    <value>Space weather forecasts and discussions</value>
-  </data>
-  <data name="IpgForecastDiscussion" xml:space="preserve">
-    <value>IPG 1-day forecast ({0} UTC):
-{1}
-
-Source: {2}</value>
   </data>
   <data name="SetUserLanguageCommand" xml:space="preserve">
     <value>Please select the language</value>
@@ -160,24 +129,6 @@ For any questions, concerns, or requests regarding your data or this privacy pol
 
 Thank you for trusting Weather\.Bot\!</value>
   </data>
-  <data name="OvationPrimeCommand" xml:space="preserve">
-    <value>Please select the option</value>
-  </data>
-  <data name="OvationPrimeNoaaForecast1H" xml:space="preserve">
-    <value>1-hour forecast</value>
-  </data>
-  <data name="OvationPrimeNoaaForecast1HCaption" xml:space="preserve">
-    <value>1-hour forecast for {0} MSK ({1} UTC)</value>
-  </data>
-  <data name="OvationPrimeNoaaNowcast" xml:space="preserve">
-    <value>Aurora now</value>
-  </data>
-  <data name="OvationPrimeNoaaNowcastCaption" xml:space="preserve">
-    <value>Aurora now</value>
-  </data>
-  <data name="OvationPrimeCommandDescription" xml:space="preserve">
-    <value>Forecast &amp; Nowcast by Ovation Prime</value>
-  </data>
   <data name="CommandNotAllowedInGroups" xml:space="preserve">
     <value>Command /{0} is not available in group chats</value>
   </data>
@@ -194,5 +145,20 @@ Total: {2}
 
 &lt;b&gt;New users (+{4}, total: {5}):&lt;/b&gt;
 {6}</value>
+  </data>
+  <data name="CurrentWeatherMessage" xml:space="preserve">
+    <value>Current temperature in {0}: {1} C</value>
+  </data>
+  <data name="WeatherCommand" xml:space="preserve">
+    <value>Please select the city</value>
+  </data>
+  <data name="NewYorkCity" xml:space="preserve">
+    <value>New York</value>
+  </data>
+  <data name="ParisCity" xml:space="preserve">
+    <value>Paris</value>
+  </data>
+  <data name="WeatherCommandDescription" xml:space="preserve">
+    <value>Current weather</value>
   </data>
 </root>
