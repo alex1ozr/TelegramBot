@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TelegramBot.Framework.Entities;
 using TelegramBot.Framework.Entities.Identifiers;
 
-namespace TelegramBot.Framework.EntityFramework.Storage;
+namespace TelegramBot.Framework.EntityFramework.Repositories;
 
 public class DefaultRepository<TContext, TEntity, TEntityId> :
     IRepository<TEntity, TEntityId>
@@ -29,17 +29,17 @@ public class DefaultRepository<TContext, TEntity, TEntityId> :
         _filter = filter;
     }
 
-    public Task<TEntity?> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+    public async Task<TEntity?> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
-        return Read()
+        return await Read()
             .FirstOrDefaultAsync(predicate, cancellationToken);
     }
 
-    public Task<IReadOnlyList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
+    public async Task<IReadOnlyList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
-        return Read()
+        return await Read()
             .Where(predicate)
-            .ToReadOnlyListAsync(cancellationToken);
+            .ToListAsync(cancellationToken);
     }
 
     public async Task UpdateRangeAndDetachAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)

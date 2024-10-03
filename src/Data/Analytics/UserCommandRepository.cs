@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using TelegramBot.Data.Engine;
 using TelegramBot.Domain.Analytics;
-using TelegramBot.Framework.EntityFramework.Storage;
+using TelegramBot.Framework.EntityFramework.Repositories;
 
 namespace TelegramBot.Data.Analytics;
 

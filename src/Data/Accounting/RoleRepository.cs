@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TelegramBot.Data.Engine;
 using TelegramBot.Domain.Accounting.Roles;
-using TelegramBot.Framework.EntityFramework.Storage;
+using TelegramBot.Framework.EntityFramework.Repositories;
 
 namespace TelegramBot.Data.Accounting;
 

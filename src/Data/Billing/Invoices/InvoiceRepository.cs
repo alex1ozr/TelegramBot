@@ -1,6 +1,6 @@
 ﻿using TelegramBot.Data.Engine;
 using TelegramBot.Domain.Billing.Invoices;
-using TelegramBot.Framework.EntityFramework.Storage;
+using TelegramBot.Framework.EntityFramework.Repositories;
 
 namespace TelegramBot.Data.Billing.Invoices;
 

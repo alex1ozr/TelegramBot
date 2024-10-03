@@ -14,6 +14,7 @@ public static class RepositoryExtensions
         var entity = await repository.GetByIdOrDefaultAsync(id, cancellationToken).ConfigureAwait(false);
 
         return entity ?? throw new InvalidOperationException($"Entity with id {id} not found");
+        // TODO
         //return EntityNotFoundException.ThrowIfNull(entity, $"Entity with id {id} not found");
     }
 

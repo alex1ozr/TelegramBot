@@ -27,9 +27,7 @@ public abstract class DbOptionsConfiguratorBase<TConnectionOptions, TDataContext
     {
         var connectionString = _connectionOptions.GetConnectionString();
 
-        // SplitQuery settings is used because without it EF builds large queries to get navigation properties of collections,
-        // in which for each record it makes JOINs, which can lead to a large amount of data duplication and as a result to a
-        // large consumption of resources when trying to map them to objects
+        // SplitQuery settings is used to avoid data duplication
         // https://learn.microsoft.com/en-us/ef/core/querying/single-split-queries#data-duplication
         builder.UseNpgsql(connectionString, options =>
             options
