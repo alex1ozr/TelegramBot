@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>TelegramBot.Framework.Exceptions</AssemblyName>
+  </PropertyGroup>
+
+</Project>
