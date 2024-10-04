@@ -31,6 +31,10 @@ All the donations will be refunded back to the user automatically.
     - `user_role` - Implements the many-to-many relationship between the `users` and `roles` tables
     - `user_commands` - All the commands that the users have executed
     - `invoices` - All the invoices that the users have created / paid / refunded.
+- All entities uses value objects for identifiers. The value object is a string that contains the prefix and the unique identifier.
+  - Useful links for the context and problem statement:
+    - [5 Tips for API Design](https://codeopinion.com/want-to-build-a-good-api-here-are-5-tips-for-api-design/)
+    - [How to (and how not to) design REST APIs](https://github.com/stickfigure/blog/wiki/How-to-(and-how-not-to)-design-REST-APIs?ref=vladimir-ivanov-dev-blog#rule-6-do-use-strings-for-all-identifiers)
 - The application uses the [MediatR](https://github.com/jbogard/MediatR) library to make commands more testable and maintainable.
   - Each bot command or callback is implemented as a separate MediatR command and is handled by the corresponding handler.
 - The application supports multiple languages (English, Russian) and the user can set the preferred language using the `/set_language` command.
