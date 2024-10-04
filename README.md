@@ -82,22 +82,22 @@ dotnet tool install --global dotnet-ef
 dotnet ef migrations add Init -c DataContext -s src/Data/Data.csproj -o ./Engine/Migrations/Schema -v -- --CreateMigrationOnly
 ```
 
-## Analytics and metrics
+## Analytics and Metrics
 The application uses [OpenTelemetry](https://opentelemetry.io) for metrics, logs, and traces.
-All of them are sent to .NET Aspire's [OpenTelemetry Collector](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/telemetry)
+All of these are sent to .NET Aspire's [OpenTelemetry Collector](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/telemetry)
 and are available in the [Dashboard](https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/dashboard/overview?tabs=bash).
 
 Analytics include the following:
-- Messages that are sent to the bot by users
-- `/stats` bot command that returns 24h statistics of the bot usage
+- Messages sent to the bot by users
+- The `/stats` bot command, which returns 24-hour statistics on bot usage
 
 Metrics include the following:
-- `telegram_bot.commands_executed` - Counter of commands executed by the bot
-- `telegram_bot.commands_failed` - Counter of commands failed to execute by the bot
-- `telegram_bot.users_created` - Counter of new users that have interacted with the bot
+- `telegram_bot.commands_executed` - A counter of commands executed by the bot
+- `telegram_bot.commands_failed` - A counter of commands that failed to execute
+- `telegram_bot.users_created` - A counter of new users who have interacted with the bot
 
-## Code style
-The solution uses [EditorConfig](.editorconfig) nested from [Azure SDK .NET](https://github.com/Azure/azure-sdk-for-net/blob/main/.editorconfig) to maintain a consistent code style.
+## Code Style
+The solution uses [EditorConfig](.editorconfig), inherited from [Azure SDK .NET](https://github.com/Azure/azure-sdk-for-net/blob/main/.editorconfig), to maintain a consistent code style.
 
-- In order to enforce the code style, it is recommended to execute the `dotnet format` command before pushing the changes.
-- It is also possible to use the `dotnet format --verify-no-changes` command to check if the code style is consistent.
+- To enforce the code style, it is recommended to run the `dotnet format` command before pushing changes.
+- You can also use the `dotnet format --verify-no-changes` command to check if the code style is consistent.
