@@ -9,6 +9,7 @@ using TelegramBot.Domain.Exceptions;
 using TelegramBot.Framework.Composition;
 using TelegramBot.Framework.Configuration;
 using TelegramBot.Framework.EntityFramework.Interceptors;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Data;
 
@@ -37,7 +38,7 @@ public static class ServiceCollectionExtensions
 
         var connection = configuration.GetRequiredOptions<ConnectionOptions>();
 
-        var connectionString = UnexpectedException.ThrowIfNull(
+        UnexpectedException.ThrowIfNull(
             connection.TelegramBot,
             $"Connection string '{nameof(ConnectionOptions.TelegramBot)}' is not configured");
     }

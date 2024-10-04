@@ -1,6 +1,5 @@
 namespace TelegramBot.Framework.Utilities.System;
 
-// TODO Rewrite in a more elegant way
 public static class TypeExtensions
 {
     public static T GetStaticPropertyValue<T>(this Type implementationType, Type interfaceType, string propertyName)

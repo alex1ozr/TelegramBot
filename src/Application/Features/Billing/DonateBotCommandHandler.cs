@@ -34,7 +34,8 @@ internal sealed class DonateBotCommandHandler : IRequestHandler<DonateBotCommand
             message.Chat.Id,
             text,
             parseMode: FormatStyles.HTML,
-            replyMarkup: keyboard, cancellationToken: cancellationToken);
+            replyMarkup: keyboard, cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
 
         return Unit.Value;
     }

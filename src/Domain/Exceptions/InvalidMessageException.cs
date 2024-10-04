@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Domain.Exceptions;
 

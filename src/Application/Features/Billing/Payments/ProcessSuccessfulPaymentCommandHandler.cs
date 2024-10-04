@@ -49,12 +49,12 @@ internal sealed class ProcessSuccessfulPaymentCommandHandler : IRequestHandler<P
         try
         {
             var invoiceId = InvoiceId.Parse(payment.InvoicePayload);
-            var invoice = await _invoiceRepository.GetByIdAsync(invoiceId, cancellationToken)
+            var invoice = await _invoiceRepository.GetByIdAsync(invoiceId, cancellationToken).ConfigureAwait(false)
                           ?? throw new InvoiceNotFoundException(invoiceId);
             var userId = invoice.UserId.Required();
 
             invoice.SetPaid(payment.TelegramPaymentChargeId);
-            await _invoiceRepository.UpdateAsync(invoice, cancellationToken);
+            await _invoiceRepository.UpdateAsync(invoice, cancellationToken).ConfigureAwait(false);
 
             _logger.LogInformation(
                 "Invoice {InvoiceId} (Type: {InvoiceType}, Price: {Price} {Currency}) was paid by user {UserId}",
@@ -68,14 +68,16 @@ internal sealed class ProcessSuccessfulPaymentCommandHandler : IRequestHandler<P
                 nameof(BotMessages.ThanksForSupportMessage),
                 invoice.User.GetBotLanguage());
 
-            await _client.SendMessageAsync(message.Chat.Id, text, cancellationToken: cancellationToken);
+            await _client.SendMessageAsync(message.Chat.Id, text, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         finally
         {
             if (_billingOptions.Value.IsTestMode)
             {
-                await _mediator.Send(new RefundPaymentCommand(InvoiceId.Parse(payment.InvoicePayload)),
-                    cancellationToken);
+                await _mediator.Send(
+                        new RefundPaymentCommand(InvoiceId.Parse(payment.InvoicePayload)),
+                        cancellationToken)
+                    .ConfigureAwait(false);
             }
         }
 

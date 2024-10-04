@@ -81,7 +81,8 @@ internal sealed class SetUserLanguageCallbackCommandHandler :
             messageText,
             parseMode: FormatStyles.HTML,
             replyMarkup: null,
-            cancellationToken: cancellationToken);
+            cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
 
         _logger.LogInformation("User {UserId} language was set to {LanguageOption}", user.Id, languageOption);
 

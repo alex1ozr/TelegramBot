@@ -47,7 +47,8 @@ internal sealed class SendDonationInvoiceCommandHandler : IRequestHandler<SendDo
             message.Chat.Id.ToString(),
             user,
             request.DonationOption,
-            cancellationToken);
+            cancellationToken)
+            .ConfigureAwait(false);
 
         try
         {
@@ -60,14 +61,15 @@ internal sealed class SendDonationInvoiceCommandHandler : IRequestHandler<SendDo
                 message.MessageId,
                 text,
                 parseMode: FormatStyles.HTML,
-                replyMarkup: null, cancellationToken: cancellationToken);
+                replyMarkup: null, cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
 
             var invoiceArgs = invoice.ToSendInvoiceArgs();
-            await _client.SendInvoiceAsync(invoiceArgs, cancellationToken: cancellationToken);
+            await _client.SendInvoiceAsync(invoiceArgs, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         catch (BotRequestException exception)
         {
-            await CancelInvoiceAsync(invoice, exception, cancellationToken);
+            await CancelInvoiceAsync(invoice, exception, cancellationToken).ConfigureAwait(false);
 
             var error = _botMessageLocalizer.GetLocalizedString(
                 nameof(BotMessages.CannotCreateInvoiceError),
@@ -76,7 +78,8 @@ internal sealed class SendDonationInvoiceCommandHandler : IRequestHandler<SendDo
                 message.Chat.Id,
                 error,
                 parseMode: FormatStyles.HTML,
-                cancellationToken: cancellationToken);
+                cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
         }
 
         return Unit.Value;
@@ -110,7 +113,7 @@ internal sealed class SendDonationInvoiceCommandHandler : IRequestHandler<SendDo
             donationOption.Amount,
             startParameter: donationOption.Name);
 
-        await _invoiceRepository.AddAsync(invoice, cancellationToken);
+        await _invoiceRepository.AddAsync(invoice, cancellationToken).ConfigureAwait(false);
 
         _logger.LogInformation(
             "Invoice {InvoiceId} (Type: {InvoiceType}, Price: {Price} {Currency}) was created for user {UserId}",

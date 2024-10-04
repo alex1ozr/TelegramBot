@@ -17,7 +17,9 @@ internal sealed class DonateCallbackCommandHandler : IRequestHandler<DonateCallb
         var donationOption = BillingOptions.DonationOptions.FirstOrDefault(x => x.Name == request.Arguments.FirstOrDefault());
         if (donationOption is not null)
         {
-            await _mediator.Send(new SendDonationInvoiceCommand(request.Message, donationOption), cancellationToken);
+            await _mediator
+                .Send(new SendDonationInvoiceCommand(request.Message, donationOption), cancellationToken)
+                .ConfigureAwait(false);
         }
 
         return Unit.Value;

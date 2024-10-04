@@ -11,27 +11,11 @@ partial class WeatherBot
     {
         if (!string.IsNullOrEmpty(message.Text) && message.Text.StartsWith('/'))
         {
-            await base.OnMessageAsync(message, cancellationToken);
+            await base.OnMessageAsync(message, cancellationToken).ConfigureAwait(false);
         }
         else if (message.SuccessfulPayment != null)
         {
-            await _mediator.Send(new ProcessSuccessfulPaymentCommand(message), cancellationToken);
-        }
-        else
-        {
-            /*
-            var state = GetCurrentState(message.Chat.Id);
-
-            if (state == null)
-            {
-                var text = string.Format(MSG.Help, Username);
-                _client.SendMessage(message.Chat.Id, text);
-            }
-            else
-            {
-                OnUserState(message, state);
-            }
-            */
+            await _mediator.Send(new ProcessSuccessfulPaymentCommand(message), cancellationToken).ConfigureAwait(false);
         }
     }
 }

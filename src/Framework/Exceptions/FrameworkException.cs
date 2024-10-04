@@ -1,4 +1,4 @@
-﻿namespace TelegramBot.Domain.Exceptions;
+﻿namespace TelegramBot.Framework.Exceptions;
 
 /// <summary>
 /// Framework exception

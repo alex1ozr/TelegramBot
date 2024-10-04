@@ -27,7 +27,9 @@ public static class DatabaseMigrationManager
     private static async Task MigrateAsync<TFactory>()
         where TFactory : IDesignTimeDbContextFactory<DbContext>, new()
     {
+#pragma warning disable CA2007
         await using var context = new TFactory().CreateDbContext([]);
+#pragma warning restore CA2007
         await context.Database.MigrateAsync().ConfigureAwait(false);
     }
 }

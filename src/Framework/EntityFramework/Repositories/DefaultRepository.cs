@@ -32,30 +32,14 @@ public class DefaultRepository<TContext, TEntity, TEntityId> :
     public async Task<TEntity?> GetFirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
         return await Read()
-            .FirstOrDefaultAsync(predicate, cancellationToken);
+            .FirstOrDefaultAsync(predicate, cancellationToken).ConfigureAwait(false);
     }
 
     public async Task<IReadOnlyList<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken)
     {
         return await Read()
             .Where(predicate)
-            .ToListAsync(cancellationToken);
-    }
-
-    public async Task UpdateRangeAndDetachAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)
-    {
-        if (!entities.Any())
-        {
-            return;
-        }
-
-        DbSet.UpdateRange(entities);
-        await Context.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-
-        foreach (var entity in entities)
-        {
-            Context.Entry(entity).State = EntityState.Detached;
-        }
+            .ToListAsync(cancellationToken).ConfigureAwait(false);
     }
 
     public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
@@ -64,58 +48,9 @@ public class DefaultRepository<TContext, TEntity, TEntityId> :
         await Context.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
     }
 
-    public async Task AddRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)
-    {
-        if (!entities.Any())
-        {
-            return;
-        }
-
-        await DbSet.AddRangeAsync(entities, cancellationToken).ConfigureAwait(false);
-        await Context.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-    }
-
-    public async Task AddRangeAndDetachAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)
-    {
-        if (!entities.Any())
-        {
-            return;
-        }
-
-        DbSet.AddRange(entities);
-        await Context.SaveChangesAsync(cancellationToken);
-
-        foreach (var entity in entities)
-        {
-            Context.Entry(entity).State = EntityState.Detached;
-        }
-    }
-
-    public Task RemoveRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)
-    {
-        if (!entities.Any())
-        {
-            return Task.CompletedTask;
-        }
-
-        DbSet.RemoveRange(entities);
-        return Context.SaveChangesAsync(cancellationToken);
-    }
-
     public Task UpdateAsync(TEntity entity, CancellationToken cancellationToken)
     {
         DbSet.Update(entity);
-        return Context.SaveChangesAsync(cancellationToken);
-    }
-
-    public Task UpdateRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken)
-    {
-        if (!entities.Any())
-        {
-            return Task.CompletedTask;
-        }
-
-        DbSet.UpdateRange(entities);
         return Context.SaveChangesAsync(cancellationToken);
     }
 

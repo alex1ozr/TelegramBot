@@ -10,6 +10,7 @@
     <WarningLevel>9999</WarningLevel>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <NoWarn>$(NoWarn);</NoWarn>
+    <WarningsAsErrors>CA2007</WarningsAsErrors>
 
     <!-- Pack everything with embedded .pdb -->
     <EmbedAllSources>true</EmbedAllSources>

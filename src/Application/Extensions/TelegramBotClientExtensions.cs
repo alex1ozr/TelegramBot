@@ -23,7 +23,8 @@ internal static class TelegramBotClientExtensions
                 part,
                 linkPreviewOptions: DefaultLinkPreviewOptions.Value,
                 parseMode: parseMode,
-                cancellationToken: cancellationToken);
+                cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 }

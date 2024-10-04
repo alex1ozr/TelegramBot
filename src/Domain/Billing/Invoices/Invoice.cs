@@ -1,6 +1,7 @@
 using TelegramBot.Domain.Accounting.Users;
 using TelegramBot.Domain.Exceptions;
 using TelegramBot.Framework.Entities;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Domain.Billing.Invoices;
 

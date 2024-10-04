@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using TelegramBot.Domain.Billing.Invoices;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Domain.Exceptions;
 

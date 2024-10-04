@@ -15,16 +15,19 @@ partial class WeatherBot
         var args = cQuery.Data?.Split(' ') ?? [];
         if (cQuery.Message == null || args.Length == 0)
         {
-            await _client.AnswerCallbackQueryAsync(cQuery.Id,
+            await _client.AnswerCallbackQueryAsync(
+                    cQuery.Id,
                 "This button is no longer available",
                 true,
-                cacheTime: InvalidCallbackQueryCacheTime, cancellationToken: cancellationToken);
+                cacheTime: InvalidCallbackQueryCacheTime, cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
             return;
         }
 
         var commandName = args[0];
 
-        var userInfo = await _mediator.Send(new GetUserInfoQuery(cQuery.From.Id.ToString()), cancellationToken);
+        var userInfo = await _mediator.Send(new GetUserInfoQuery(cQuery.From.Id.ToString()), cancellationToken)
+            .ConfigureAwait(false);
         var callbackCommand = _commandFactory.CreateCallbackCommand(
             commandName,
             cQuery.Message,
@@ -33,8 +36,9 @@ partial class WeatherBot
 
         if (callbackCommand is not UnknownCallbackCommand)
         {
-            await _client.AnswerCallbackQueryAsync(cQuery.Id, cacheTime: 2, cancellationToken: cancellationToken);
-            await _mediator.Send(callbackCommand, cancellationToken);
+            await _client.AnswerCallbackQueryAsync(cQuery.Id, cacheTime: 2, cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
+            await _mediator.Send(callbackCommand, cancellationToken).ConfigureAwait(false);
 
             _metrics.IncreaseCommandsExecuted();
             await SaveUserCommandAsync(userInfo.Required().TelegramUserId, commandName, cancellationToken)
@@ -42,7 +46,8 @@ partial class WeatherBot
         }
         else
         {
-            await _client.AnswerCallbackQueryAsync(cQuery.Id, "???", cacheTime: 999, cancellationToken: cancellationToken);
+            await _client.AnswerCallbackQueryAsync(cQuery.Id, "???", cacheTime: 999, cancellationToken: cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 }

@@ -34,10 +34,10 @@ internal sealed class TelegramBotSetup : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        await SetCommands(cancellationToken);
+        await SetCommands(cancellationToken).ConfigureAwait(false);
 
         // Delete the previous webhook if it is configured.
-        await _client.DeleteWebhookAsync(cancellationToken: cancellationToken);
+        await _client.DeleteWebhookAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
 
         var webhookUrl = _options.Value.WebhookUrl;
         var secretToken = _options.Value.SecretToken;
@@ -47,10 +47,11 @@ internal sealed class TelegramBotSetup : IHostedService
         {
             _logger.LogInformation("Setting up the webhook");
             await _client.SetWebhookAsync(
-                webhookUrl,
-                secretToken: secretToken,
-                cancellationToken: cancellationToken
-            );
+                    webhookUrl,
+                    secretToken: secretToken,
+                    cancellationToken: cancellationToken
+                )
+                .ConfigureAwait(false);
             _logger.LogInformation("Webhook set up successfully at {Url}", webhookUrl);
         }
 
@@ -62,7 +63,7 @@ internal sealed class TelegramBotSetup : IHostedService
     private async Task SetCommands(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Setting up the bot commands");
-        await _client.DeleteMyCommandsAsync(cancellationToken: cancellationToken);
+        await _client.DeleteMyCommandsAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // default (en)
         await _client.SetMyCommandsAsync(
@@ -74,7 +75,7 @@ internal sealed class TelegramBotSetup : IHostedService
                     _botMessageLocalizer
                         .GetLocalizedString(nameof(BotMessages.HelpCommandDescription), BotLanguage.English)),
             ],
-            cancellationToken: cancellationToken);
+            cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // ru
         await _client.SetMyCommandsAsync(
@@ -87,7 +88,7 @@ internal sealed class TelegramBotSetup : IHostedService
                         .GetLocalizedString(nameof(BotMessages.HelpCommandDescription), BotLanguage.Russian)),
             ],
             languageCode: LanguageCodes.Russian,
-            cancellationToken: cancellationToken);
+            cancellationToken: cancellationToken).ConfigureAwait(false);
 
         _logger.LogInformation("Commands registered successfully");
     }

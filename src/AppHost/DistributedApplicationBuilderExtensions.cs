@@ -15,7 +15,6 @@ internal static class DistributedApplicationBuilderExtensions
             .WithImageTag("17.0-alpine")
             .WithDataVolume()
             .WithPgAdmin()
-            .WithEnvironment("POSTGRES_DB", dbName)
             .AddDatabase(dbName);
 
         return postgresDb;

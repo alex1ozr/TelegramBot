@@ -18,7 +18,8 @@ internal sealed class UserRepository :
     {
         return await Context.Users
             .FirstOrDefaultAsync(x => x.TelegramUserId == telegramUserId,
-                cancellationToken);
+                cancellationToken)
+            .ConfigureAwait(false);
     }
 
     public async Task<IReadOnlyList<User>> GetLastRegisteredUsersAsync(DateTime from, CancellationToken cancellationToken)
@@ -26,11 +27,12 @@ internal sealed class UserRepository :
         return await Context.Users
             .Where(x => x.CreatedAt >= from)
             .OrderBy(x => x.CreatedAt)
-            .ToListAsync(cancellationToken);
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
     }
 
     public async Task<int> GetTotalUsersAsync(CancellationToken cancellationToken)
     {
-        return await Context.Users.CountAsync(cancellationToken);
+        return await Context.Users.CountAsync(cancellationToken).ConfigureAwait(false);
     }
 }

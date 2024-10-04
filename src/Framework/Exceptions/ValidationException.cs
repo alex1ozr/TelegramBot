@@ -1,37 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace TelegramBot.Domain.Exceptions;
-
-/// <summary>
-/// Invalid data description
-/// </summary>
-public sealed class InvalidParameterReason : Dictionary<string, List<string>>
-{
-    public InvalidParameterReason()
-    {
-    }
-
-    public InvalidParameterReason(string name, string reason)
-    {
-        AddReason(name, reason);
-    }
-
-    public InvalidParameterReason AddReason(string name, string reason)
-    {
-        if (!TryGetValue(name, out var reasons))
-        {
-            reasons = new List<string>();
-            Add(name, reasons);
-        }
-
-        reasons.Add(reason);
-
-        return this;
-    }
-
-    public IReadOnlyDictionary<string, IReadOnlyList<string>> ToReadOnly() => this
-        .ToDictionary(pair => pair.Key, pair => (IReadOnlyList<string>)new ReadOnlyCollection<string>(pair.Value));
-}
+namespace TelegramBot.Framework.Exceptions;
 
 /// <summary>
 /// Validation exception
@@ -88,15 +57,36 @@ public class ValidationException : FrameworkException
 
         return argument;
     }
+}
 
-    /*
-    public static void ThrowIfNotShort(string? argument, string argumentName)
+/// <summary>
+/// Invalid data description
+/// </summary>
+public sealed class InvalidParameterReason : Dictionary<string, List<string>>
+{
+    public InvalidParameterReason()
     {
-        if (argument is not null && argument.Length > EntityConfigurationConstants.ShortStringLength)
-        {
-            throw new ValidationException($"{argumentName} cannot be longer than {EntityConfigurationConstants.ShortStringLength} characters");
-        }
     }
-    */
+
+    public InvalidParameterReason(string name, string reason)
+    {
+        AddReason(name, reason);
+    }
+
+    public InvalidParameterReason AddReason(string name, string reason)
+    {
+        if (!TryGetValue(name, out var reasons))
+        {
+            reasons = new List<string>();
+            Add(name, reasons);
+        }
+
+        reasons.Add(reason);
+
+        return this;
+    }
+
+    public IReadOnlyDictionary<string, IReadOnlyList<string>> ToReadOnly() => this
+        .ToDictionary(pair => pair.Key, pair => (IReadOnlyList<string>)new ReadOnlyCollection<string>(pair.Value));
 }
 

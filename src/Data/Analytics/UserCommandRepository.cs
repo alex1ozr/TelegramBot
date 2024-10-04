@@ -22,6 +22,7 @@ internal sealed class UserCommandRepository :
         CancellationToken cancellationToken)
     {
         var fromMoment = _timeProvider.GetUtcNow().UtcDateTime - period;
+
         var topCommands = await Context.UserCommands
             .Where(x => x.CreatedAt >= fromMoment)
             .GroupBy(x => x.CommandName)
@@ -29,7 +30,8 @@ internal sealed class UserCommandRepository :
             .OrderByDescending(x => x.Count)
             .Take(10)
             .Select(x => new { x.Command, x.Count })
-            .ToListAsync(cancellationToken);
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
 
         return topCommands.Select(x => (x.Command, x.Count)).ToList();
     }
@@ -38,6 +40,7 @@ internal sealed class UserCommandRepository :
         CancellationToken cancellationToken)
     {
         var fromMoment = _timeProvider.GetUtcNow().UtcDateTime - period;
+
         var topUsers = await Context.UserCommands
             .Where(x => x.CreatedAt >= fromMoment)
             .GroupBy(x => x.UserId)
@@ -45,7 +48,8 @@ internal sealed class UserCommandRepository :
             .OrderByDescending(x => x.Count)
             .Take(10)
             .Select(x => new { x.UserId, x.Count })
-            .ToListAsync(cancellationToken);
+            .ToListAsync(cancellationToken)
+            .ConfigureAwait(false);
 
         return topUsers.Select(x => (x.UserId.ToString(), x.Count)).ToList();
     }

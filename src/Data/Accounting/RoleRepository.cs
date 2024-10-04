@@ -19,6 +19,7 @@ internal sealed class RoleRepository :
         var normalizedName = name.ToUpper();
         return await Context.Roles
             .FirstOrDefaultAsync(x => x.NormalizedName == normalizedName,
-                cancellationToken);
+                cancellationToken)
+            .ConfigureAwait(false);
     }
 }

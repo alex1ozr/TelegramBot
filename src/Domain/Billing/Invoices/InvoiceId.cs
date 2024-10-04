@@ -14,5 +14,5 @@ public sealed class InvoiceId :
     {
     }
 
-    public static string Prefix { get; } = FormatPrefix("swb", "inv");
+    public static string Prefix { get; } = FormatPrefix("tb", "inv");
 }

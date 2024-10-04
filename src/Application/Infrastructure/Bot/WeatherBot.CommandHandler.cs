@@ -65,7 +65,7 @@ partial class WeatherBot
                 }
             }
 
-            await _mediator.Send(command, cancellationToken);
+            await _mediator.Send(command, cancellationToken).ConfigureAwait(false);
 
             _metrics.IncreaseCommandsExecuted();
             await SaveUserCommandAsync(userInfo.TelegramUserId, commandName, cancellationToken)

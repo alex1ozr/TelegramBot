@@ -13,15 +13,5 @@ public interface IRepository<TEntity, TEntityId>
 
     Task UpdateAsync(TEntity entity, CancellationToken cancellationToken);
 
-    Task UpdateRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken);
-
-    Task UpdateRangeAndDetachAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken);
-
     Task AddAsync(TEntity entity, CancellationToken cancellationToken);
-
-    Task AddRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken);
-
-    Task AddRangeAndDetachAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken);
-
-    Task RemoveRangeAsync(IReadOnlyList<TEntity> entities, CancellationToken cancellationToken);
 }

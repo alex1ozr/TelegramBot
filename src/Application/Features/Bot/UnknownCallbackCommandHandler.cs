@@ -6,7 +6,7 @@ using TelegramBot.Application.Resources;
 
 namespace TelegramBot.Application.Features.Bot;
 
-public sealed class UnknownCallbackCommandHandler : IRequestHandler<UnknownCallbackCommand, Unit>
+internal sealed class UnknownCallbackCommandHandler : IRequestHandler<UnknownCallbackCommand, Unit>
 {
     private readonly ITelegramBotClient _telegramBotClient;
     private readonly IBotMessageLocalizer _botMessageLocalizer;

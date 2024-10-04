@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Framework\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Framework\Exceptions\Exceptions.csproj" />
   </ItemGroup>
 
 </Project>

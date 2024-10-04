@@ -9,6 +9,7 @@ using TelegramBot.Application.Resources;
 using TelegramBot.Domain.Billing.Invoices;
 using TelegramBot.Domain.Exceptions;
 using TelegramBot.Framework.Entities;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Application.Features.Billing.Payments;
 
@@ -33,7 +34,7 @@ internal sealed class RefundPaymentCommandHandler : IRequestHandler<RefundPaymen
 
     public async Task<Unit> Handle(RefundPaymentCommand request, CancellationToken cancellationToken)
     {
-        var invoice = await _invoiceRepository.GetByIdAsync(request.InvoiceId, cancellationToken)
+        var invoice = await _invoiceRepository.GetByIdAsync(request.InvoiceId, cancellationToken).ConfigureAwait(false)
                       ?? throw new InvoiceNotFoundException(request.InvoiceId);
 
         if (invoice.Status != InvoiceStatus.Paid
@@ -48,10 +49,11 @@ internal sealed class RefundPaymentCommandHandler : IRequestHandler<RefundPaymen
 
         await _client.RefundStarPaymentAsync(
             telegramUserId,
-            invoice.TelegramPaymentChargeId, cancellationToken);
+            invoice.TelegramPaymentChargeId, cancellationToken)
+            .ConfigureAwait(false);
 
         invoice.SetRefunded();
-        await _invoiceRepository.UpdateAsync(invoice, cancellationToken);
+        await _invoiceRepository.UpdateAsync(invoice, cancellationToken).ConfigureAwait(false);
 
         _logger.LogInformation(
             "The payment for invoice {InvoiceId} (Type: {InvoiceType}, Price: {Price} {Currency}) was refunded to user {UserId}",
@@ -65,7 +67,7 @@ internal sealed class RefundPaymentCommandHandler : IRequestHandler<RefundPaymen
             nameof(BotMessages.SuccessfulRefundMessage),
             invoice.User.GetBotLanguage());
 
-        await _client.SendMessageAsync(invoice.ChatId, text, cancellationToken: cancellationToken);
+        await _client.SendMessageAsync(invoice.ChatId, text, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         return Unit.Value;
     }

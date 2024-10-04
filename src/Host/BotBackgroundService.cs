@@ -10,6 +10,8 @@ internal sealed class BotBackgroundService(
     IUpdateReceiver updateReceiver)
     : BackgroundService
 {
+    private const int PollingIntervalMs = 100;
+
     /// <inheritdoc />
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -20,10 +22,10 @@ internal sealed class BotBackgroundService(
             if (!updates.Any())
             {
                 // Wait 100 ms before polling again.
-                await Task.Delay(100, stoppingToken);
+                await Task.Delay(PollingIntervalMs, stoppingToken).ConfigureAwait(false);
 
                 // Get updates from the bot API.
-                updates = (await client.GetUpdatesAsync(cancellationToken: stoppingToken)).ToList();
+                updates = (await client.GetUpdatesAsync(cancellationToken: stoppingToken).ConfigureAwait(false)).ToList();
                 continue;
             }
 
@@ -34,11 +36,11 @@ internal sealed class BotBackgroundService(
             }
 
             // Wait 100 ms before polling again.
-            await Task.Delay(100, stoppingToken);
+            await Task.Delay(PollingIntervalMs, stoppingToken).ConfigureAwait(false);
 
             // Get offset for the next update.
             var offset = updates.Max(u => u.UpdateId) + 1;
-            updates = (await client.GetUpdatesAsync(offset, cancellationToken: stoppingToken)).ToList();
+            updates = (await client.GetUpdatesAsync(offset, cancellationToken: stoppingToken).ConfigureAwait(false)).ToList();
         }
     }
 }

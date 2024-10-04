@@ -11,5 +11,5 @@ public sealed class UserId :
     {
     }
 
-    public static string Prefix { get; } = FormatPrefix("swb", "user");
+    public static string Prefix { get; } = FormatPrefix("tb", "user");
 }

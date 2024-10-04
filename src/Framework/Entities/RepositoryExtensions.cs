@@ -1,4 +1,5 @@
 ﻿using TelegramBot.Framework.Entities.Identifiers;
+using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Framework.Entities;
 
@@ -13,9 +14,7 @@ public static class RepositoryExtensions
     {
         var entity = await repository.GetByIdOrDefaultAsync(id, cancellationToken).ConfigureAwait(false);
 
-        return entity ?? throw new InvalidOperationException($"Entity with id {id} not found");
-        // TODO
-        //return EntityNotFoundException.ThrowIfNull(entity, $"Entity with id {id} not found");
+        return EntityNotFoundException.ThrowIfNull(entity, $"Entity with id {id} wasn't found");
     }
 
     public static Task<TEntity?> GetByIdOrDefaultAsync<TEntity, TEntityId>(
@@ -26,24 +25,5 @@ public static class RepositoryExtensions
         where TEntityId : class, IIdentifier
     {
         return repository.GetFirstOrDefaultAsync(entity => entity.Id == entityId, cancellationToken);
-    }
-
-    public static Task<IReadOnlyList<TEntity>> GetByIdsAsync<TEntity, TEntityId>(
-        this IRepository<TEntity, TEntityId> repository,
-        IReadOnlyList<TEntityId> entityIds,
-        CancellationToken cancellationToken)
-        where TEntity : class, IEntity<TEntityId>
-        where TEntityId : class, IIdentifier
-    {
-        return repository.GetAllAsync(entity => entityIds.Contains(entity.Id), cancellationToken);
-    }
-
-    public static Task<IReadOnlyList<TEntity>> GetAllAsync<TEntity, TEntityId>(
-        this IRepository<TEntity, TEntityId> repository,
-        CancellationToken cancellationToken)
-        where TEntity : class, IEntity<TEntityId>
-        where TEntityId : class, IIdentifier
-    {
-        return repository.GetAllAsync(entity => true, cancellationToken);
     }
 }

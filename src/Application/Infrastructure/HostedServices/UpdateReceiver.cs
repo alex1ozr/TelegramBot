@@ -57,7 +57,7 @@ internal sealed class UpdateReceiver :
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            var update = await _updates.Reader.ReadAsync(stoppingToken);
+            var update = await _updates.Reader.ReadAsync(stoppingToken).ConfigureAwait(false);
             if (update is not null)
             {
                 actionBlock.Post(update);
@@ -76,7 +76,7 @@ internal sealed class UpdateReceiver :
         try
         {
             var bot = scope.ServiceProvider.GetRequiredService<WeatherBot>();
-            await bot.OnUpdateAsync(update);
+            await bot.OnUpdateAsync(update).ConfigureAwait(false);
         }
         catch (Exception e)
         {
