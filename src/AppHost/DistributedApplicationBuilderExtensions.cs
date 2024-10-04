@@ -11,7 +11,7 @@ internal static class DistributedApplicationBuilderExtensions
         var dbPassword = builder.AddParameter("postgrespassword");
 
         var postgresDb = builder
-            .AddPostgres(resourceName, port: 5432, password: dbPassword)
+            .AddPostgres(resourceName, password: dbPassword)
             .WithImageTag("17.0-alpine")
             .WithDataVolume()
             .WithPgAdmin()

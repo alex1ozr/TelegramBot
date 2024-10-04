@@ -1,6 +1,6 @@
 namespace TelegramBot.Framework.Utilities.System;
 
-public static  class StringExtensions
+public static class StringExtensions
 {
     /// <summary>
     /// Splits the specified text into chunks of the specified size

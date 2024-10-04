@@ -9,7 +9,6 @@ A monolith .NET application that demonstrates how to build a Telegram bot using 
 - [Entity Framework Core 8](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew)
 - [PostgreSql](https://www.postgresql.org)
 - [MediatR](https://github.com/jbogard/MediatR)
-- [Redis](https://redis.io) for caching
 - [OpenTelemetry](https://opentelemetry.io) for logs, traces, and metrics
 
 ## Prerequisites
@@ -22,15 +21,18 @@ A monolith .NET application that demonstrates how to build a Telegram bot using 
 - [Docker](https://www.docker.com/get-started)
 
 ### Running API
-In order to run the Host, you need to have a PostgreSQL database running and a Telegram bot token.
+In order to run the Host, you need to have a Telegram bot token.
+- Create a new bot using the [BotFather](https://core.telegram.org/bots#6-botfather) and get the token.
+- Set the `Telegram:BotToken` value in the Host's [appsettings.json](src/Host/appsettings.json) file.
 
 ## Startup project
 
 ### [AppHost](src/AppHost/)
-Runs the application (Telegram bot host service) using .NET Aspire.
+Recommended way to run the application (Telegram bot host service) using .NET Aspire.
 
 ### [Host](src/Host/)
 Runs the application (Telegram bot host service) as standalone .NET application.
+Make sure to have a PostgreSQL database running and the connection string is set in the [appsettings.json](src/Host/appsettings.json) file.
 
 #### Health checks
 - `GET /alive` - Returns `200 OK` and 'Healthy' message if the application is healthy.
