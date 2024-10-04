@@ -40,6 +40,8 @@ All the donations will be refunded back to the user automatically.
 - The application supports multiple languages (English, Russian) and the user can set the preferred language using the `/set_language` command.
 - The application uses polling to receive updates from the Telegram API. The polling interval is set to 100 ms.
   - It is recommended to use the webhook instead of polling in the production environment. See [ShopBot](https://github.com/Eptagone/ShopBot) example for more details.
+- `ConfigureAwait(false)` is used in the asynchronous methods to avoid deadlocks as recommended by the [Microsoft](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca2007chronizationcontext).
+  - CA2007 analyzer is enabled as errors in the [Directory.Build.props](Directory.Build.props) file to force the usage of `ConfigureAwait(false)` in the code.
 
 ## Prerequisites
 
