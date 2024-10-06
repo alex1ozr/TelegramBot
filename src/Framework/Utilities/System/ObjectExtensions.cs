@@ -3,7 +3,7 @@
 namespace TelegramBot.Framework.Utilities.System;
 
 /// <summary>
-/// Extensions for <see cref="object"/>
+/// Extensions for the <see cref="object"/>
 /// </summary>
 public static class ObjectExtensions
 {

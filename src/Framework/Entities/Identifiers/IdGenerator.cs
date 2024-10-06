@@ -18,8 +18,7 @@ public static class IdGenerator
 
     private static string NewId()
     {
-        var uniqueId = Guid.NewGuid();
-        var encoded = Base64UrlEncoder.Encode(uniqueId.ToByteArray());
+        var encoded = Base64UrlEncoder.Encode(Guid.NewGuid().ToByteArray());
         return encoded;
     }
 }

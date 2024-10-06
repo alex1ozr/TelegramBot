@@ -1,5 +1,8 @@
 namespace TelegramBot.Framework.Utilities.System;
 
+/// <summary>
+/// Extensions for the <see cref="Type"/>
+/// </summary>
 public static class TypeExtensions
 {
     public static T GetStaticPropertyValue<T>(this Type implementationType, Type interfaceType, string propertyName)

@@ -1,5 +1,8 @@
 namespace TelegramBot.Framework.Utilities.System;
 
+/// <summary>
+/// Extensions for the <see cref="string"/>
+/// </summary>
 public static class StringExtensions
 {
     /// <summary>

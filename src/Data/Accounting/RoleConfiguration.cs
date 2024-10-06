@@ -10,6 +10,9 @@ public sealed class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
         builder.ToTable("roles");
 
+        builder.HasIndex(x => x.NormalizedName)
+            .IsUnique();
+
         builder.HasMany(x => x.Users)
             .WithMany(x => x.Roles)
             .UsingEntity("user_role");

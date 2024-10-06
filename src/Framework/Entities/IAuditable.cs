@@ -6,12 +6,12 @@
 public interface IAuditable
 {
     /// <summary>
-    /// Date-time of creation
+    /// Date-time of creation (UTC)
     /// </summary>
     DateTime CreatedAt { get; }
 
     /// <summary>
-    /// Date-time of the last update
+    /// Date-time of the last update (UTC)
     /// </summary>
     DateTime UpdatedAt { get; }
 }

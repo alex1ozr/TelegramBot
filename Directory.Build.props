@@ -11,6 +11,7 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <NoWarn>$(NoWarn);</NoWarn>
     <WarningsAsErrors>CA2007</WarningsAsErrors>
+    <!--CA2007: Do not directly await a Task-->
 
     <!-- Pack everything with embedded .pdb -->
     <EmbedAllSources>true</EmbedAllSources>

@@ -33,7 +33,7 @@ public sealed class DeletableInterceptor : SaveChangesInterceptor
             return ValueTask.FromResult(result);
         }
 
-        var deletedAt = _timeProvider.GetUtcNow();
+        var deletedAt = _timeProvider.GetUtcNow().UtcDateTime;
 
         foreach (var deletableEntity in deletedEntities)
         {
