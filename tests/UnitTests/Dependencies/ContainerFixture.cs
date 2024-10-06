@@ -19,7 +19,7 @@ public sealed class ContainerFixture : WebApplicationFactory<IHostMarker>
     private static readonly IReadOnlyList<Assembly> s_hostAssemblies =
     [
         typeof(IHostMarker).Assembly,
-            typeof(IApplicationMarker).Assembly
+        typeof(IApplicationMarker).Assembly
     ];
 
     internal static readonly IReadOnlyList<Type> s_hostTypes =
