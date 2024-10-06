@@ -13,8 +13,6 @@ public sealed class InvoiceConfiguration : IEntityTypeConfiguration<Invoice>
         builder.HasKey(x => x.Id);
 
         builder.HasIndex(x => x.UserId);
-        builder.HasIndex(x => x.ChatId);
-        builder.HasIndex(x => x.Type);
 
         builder.Property(x => x.Title)
             .HasMaxLength(32);

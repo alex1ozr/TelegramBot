@@ -51,6 +51,10 @@ namespace TelegramBot.Data.Engine.Migrations.Schema
                     b.HasKey("Id")
                         .HasName("pk_roles");
 
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("ix_roles_normalized_name");
+
                     b.ToTable("roles", "tbot");
                 });
 
@@ -91,6 +95,10 @@ namespace TelegramBot.Data.Engine.Migrations.Schema
 
                     b.HasKey("Id")
                         .HasName("pk_users");
+
+                    b.HasIndex("CreatedAt")
+                        .IsDescending()
+                        .HasDatabaseName("ix_users_created_at");
 
                     b.HasIndex("TelegramUserId")
                         .IsUnique()
@@ -206,12 +214,6 @@ namespace TelegramBot.Data.Engine.Migrations.Schema
 
                     b.HasKey("Id")
                         .HasName("pk_invoices");
-
-                    b.HasIndex("ChatId")
-                        .HasDatabaseName("ix_invoices_chat_id");
-
-                    b.HasIndex("Type")
-                        .HasDatabaseName("ix_invoices_type");
 
                     b.HasIndex("UserId")
                         .HasDatabaseName("ix_invoices_user_id");

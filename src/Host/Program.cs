@@ -29,7 +29,7 @@ try
     logger.LogInformation("Starting application...");
     var app = builder.Build();
 
-    await PrepareDatabase(loggerFactory)
+    await PrepareDatabase(loggerFactory, builder.Configuration)
         .ConfigureAwait(false);
 
     ConfigureWebApplication(app);
@@ -98,9 +98,17 @@ static void RegisterCommonServices(IServiceCollection services)
     services.AddHttpContextAccessor();
 }
 
-static async Task PrepareDatabase(ILoggerFactory loggerFactory)
+static async Task PrepareDatabase(ILoggerFactory loggerFactory, IConfiguration configuration)
 {
     var logger = loggerFactory.CreateLogger("TelegramBotDbMigration");
+
+    var noMigration = configuration.GetSection(CommandLineArgs.NoMigrationKey).Get<bool?>() ?? false;
+    if (noMigration)
+    {
+        logger.LogInformation("Database migration is disabled by configuration");
+        return;
+    }
+
     await DatabaseMigrationManager.MigrateAsync<DataContextFactory>(logger)
         .ConfigureAwait(false);
 }

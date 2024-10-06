@@ -130,22 +130,17 @@ namespace TelegramBot.Data.Engine.Migrations.Schema
                 });
 
             migrationBuilder.CreateIndex(
-                name: "ix_invoices_chat_id",
-                schema: "tbot",
-                table: "invoices",
-                column: "chat_id");
-
-            migrationBuilder.CreateIndex(
-                name: "ix_invoices_type",
-                schema: "tbot",
-                table: "invoices",
-                column: "type");
-
-            migrationBuilder.CreateIndex(
                 name: "ix_invoices_user_id",
                 schema: "tbot",
                 table: "invoices",
                 column: "user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_roles_normalized_name",
+                schema: "tbot",
+                table: "roles",
+                column: "normalized_name",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "ix_user_commands_created_at",
@@ -164,6 +159,13 @@ namespace TelegramBot.Data.Engine.Migrations.Schema
                 schema: "tbot",
                 table: "user_role",
                 column: "users_id");
+
+            migrationBuilder.CreateIndex(
+                name: "ix_users_created_at",
+                schema: "tbot",
+                table: "users",
+                column: "created_at",
+                descending: new bool[0]);
 
             migrationBuilder.CreateIndex(
                 name: "ix_users_telegram_user_id",

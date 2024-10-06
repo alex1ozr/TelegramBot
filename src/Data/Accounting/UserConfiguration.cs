@@ -13,6 +13,8 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasKey(x => x.Id);
         builder.HasIndex(x => x.TelegramUserId)
             .IsUnique();
+        builder.HasIndex(x => x.CreatedAt)
+            .IsDescending();
 
         builder.Property(x => x.Language)
             .HasMaxLength(10);

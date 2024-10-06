@@ -6,7 +6,7 @@
 public interface ISoftDeletable
 {
     /// <summary>
-    /// Date and time when entity was deleted
+    /// Date and time when entity was deleted (UTC)
     /// </summary>
-    DateTimeOffset? DeletedAt { get; }
+    DateTime? DeletedAt { get; }
 }

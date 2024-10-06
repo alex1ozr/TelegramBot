@@ -29,7 +29,6 @@ internal sealed class UserCommandRepository :
             .Select(x => new { Command = x.Key, Count = x.Count() })
             .OrderByDescending(x => x.Count)
             .Take(10)
-            .Select(x => new { x.Command, x.Count })
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
@@ -47,7 +46,6 @@ internal sealed class UserCommandRepository :
             .Select(x => new { UserId = x.Key, Count = x.Count() })
             .OrderByDescending(x => x.Count)
             .Take(10)
-            .Select(x => new { x.UserId, x.Count })
             .ToListAsync(cancellationToken)
             .ConfigureAwait(false);
 
