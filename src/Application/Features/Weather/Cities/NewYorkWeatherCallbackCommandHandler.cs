@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Telegram.BotAPI;
 using Telegram.BotAPI.AvailableMethods;
+using TelegramBot.Application.Features.Weather.DataProvider;
 using TelegramBot.Application.Infrastructure.Localization;
 using TelegramBot.Application.Resources;
 
@@ -11,13 +12,16 @@ internal sealed class NewYorkWeatherCallbackCommandHandler :
 {
     private readonly ITelegramBotClient _telegramBotClient;
     private readonly IBotMessageLocalizer _botMessageLocalizer;
+    private readonly IWeatherProvider _weatherProvider;
 
     public NewYorkWeatherCallbackCommandHandler(
         ITelegramBotClient telegramBotClient,
-        IBotMessageLocalizer botMessageLocalizer)
+        IBotMessageLocalizer botMessageLocalizer,
+        IWeatherProvider weatherProvider)
     {
         _telegramBotClient = telegramBotClient;
         _botMessageLocalizer = botMessageLocalizer;
+        _weatherProvider = weatherProvider;
     }
 
     public async Task<Unit> Handle(NewYorkWeatherCallbackCommand request,
@@ -25,7 +29,7 @@ internal sealed class NewYorkWeatherCallbackCommandHandler :
     {
         var message = request.Message;
 
-        var temperature = Random.Shared.Next(-10, 40);
+        var temperature = _weatherProvider.GetTemperature("New York City");
 
         var city = _botMessageLocalizer.GetLocalizedString(
             nameof(BotMessages.NewYorkCity),

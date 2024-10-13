@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Telegram.BotAPI;
 using TelegramBot.Application.Features.Billing;
+using TelegramBot.Application.Features.Weather;
 using TelegramBot.Application.Infrastructure;
 using TelegramBot.Application.Infrastructure.Bot;
 using TelegramBot.Application.Infrastructure.Bot.Commands;
@@ -73,11 +74,6 @@ public static class ServiceCollectionExtensions
     private static void AddFeatures(this IServiceCollection services)
     {
         services.AddBilling();
-    }
-
-    private static void AddBilling(this IServiceCollection services)
-    {
-        services.AddOptions<BillingOptions>()
-            .BindConfiguration(BillingOptions.OptionKey);
+        services.AddWeather();
     }
 }
