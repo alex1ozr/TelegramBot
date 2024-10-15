@@ -3,8 +3,14 @@ using TelegramBot.Framework.Exceptions;
 
 namespace TelegramBot.Framework.Entities;
 
+/// <summary>
+/// Extensions for <see cref="IRepository{TEntity,TEntityId}"/>
+/// </summary>
 public static class RepositoryExtensions
 {
+    /// <summary>
+    /// Get entity by id or throw <see cref="EntityNotFoundException"/>
+    /// </summary>
     public static async Task<TEntity> GetByIdAsync<TEntity, TEntityId>(
         this IRepository<TEntity, TEntityId> repository,
         TEntityId id,
@@ -17,6 +23,9 @@ public static class RepositoryExtensions
         return EntityNotFoundException.ThrowIfNull(entity, $"Entity with id {id} wasn't found");
     }
 
+    /// <summary>
+    /// Get entity by id or default value
+    /// </summary>
     public static Task<TEntity?> GetByIdOrDefaultAsync<TEntity, TEntityId>(
         this IRepository<TEntity, TEntityId> repository,
         TEntityId entityId,

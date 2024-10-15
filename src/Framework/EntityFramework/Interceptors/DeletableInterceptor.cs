@@ -16,6 +16,7 @@ public sealed class DeletableInterceptor : SaveChangesInterceptor
         _timeProvider = timeProvider;
     }
 
+    /// <inheritdoc />
     public override ValueTask<InterceptionResult<int>> SavingChangesAsync(
         DbContextEventData eventData,
         InterceptionResult<int> result,

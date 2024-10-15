@@ -70,7 +70,7 @@ static void ConfigureServices(
     });
 
     RegisterCommonServices(services);
-    services.AddBotApplication(configuration);
+    services.AddBotApplication();
     services.AddData(configuration);
 
     services.AddHostedService<BotBackgroundService>();

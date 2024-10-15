@@ -7,6 +7,7 @@ namespace TelegramBot.Application.Extensions;
 
 internal static class TelegramBotClientExtensions
 {
+    // Telegram messages can currently hold up to 4KB of text: https://bugs.telegram.org/c/1423
     private const int MaxMessageLength = 4095;
 
     public static async Task SendLargeMessageAsync(

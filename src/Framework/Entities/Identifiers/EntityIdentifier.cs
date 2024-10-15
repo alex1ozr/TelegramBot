@@ -71,14 +71,6 @@ public abstract class EntityIdentifier<TId> : IIdentifier<TId>
         return $"{serviceId}-{entityType}-";
     }
 
-    /// <summary>
-    /// Format the prefix for the entity identifier in the modular monolith using module name.
-    /// </summary>
-    protected static string FormatPrefix(string serviceId, string module, string entityType)
-    {
-        return $"{serviceId}-{module}-{entityType}-";
-    }
-
     #region Equatable Members
 
     /// <inheritdoc />

@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Telegram.BotAPI;
@@ -19,8 +18,7 @@ public static class ServiceCollectionExtensions
     /// Add the required services for the main application
     /// </summary>
     public static IServiceCollection AddBotApplication(
-        this IServiceCollection services,
-        IConfiguration configuration
+        this IServiceCollection services
     )
     {
         services.AddOptions<TelegramBotOptions>()
