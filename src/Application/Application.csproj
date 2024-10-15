@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="Humanizer" />
-    <PackageReference Include="Magick.NET-Q8-AnyCPU" />
     <PackageReference Include="MediatR" />
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" />

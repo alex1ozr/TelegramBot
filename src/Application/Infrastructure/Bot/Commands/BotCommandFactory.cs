@@ -74,15 +74,7 @@ internal sealed class BotCommandFactory : IBotCommandFactory
             .GetTypes()
             .Where(t => t is { IsClass: true, IsAbstract: false }
                         && t.IsAssignableTo(typeof(ICallbackCommand)))
-            .SingleOrDefault(t =>
-            {
-                // TODO Find a better way to get the CommandName static property
-                var interfaceMap = t.GetInterfaceMap(typeof(ICallbackCommand));
-                var commandNameProperty = interfaceMap.TargetMethods
-                    .FirstOrDefault(m => m.Name.EndsWith($"get_{nameof(IBotCommand.CommandName)}"));
-
-                return commandNameProperty?.Invoke(null, null) as string == commandName;
-            });
+            .SingleOrDefault(t => t.GetCallbackCommandDescriptor().CommandName == commandName);
 
         if (commandType is not null)
         {

@@ -47,6 +47,9 @@
 
   <!-- Automatically add dev packages to all projects -->
   <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Common">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>

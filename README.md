@@ -53,4 +53,5 @@ A detailed description of the implementation can be found in the [Implementation
 - Database schema migration
 - Analytics and Metrics
 - Code Style
+- Tests
 - and more.
