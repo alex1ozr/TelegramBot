@@ -11,7 +11,7 @@ namespace TelegramBot.Framework.EntityFramework.Migrations;
 public static class DatabaseMigrationManager
 {
     /// <summary>
-    /// Apply migrations
+    /// Apply database migrations
     /// </summary>
     public static async Task MigrateAsync<TFactory>(ILogger logger)
         where TFactory : IDesignTimeDbContextFactory<DbContext>, new()

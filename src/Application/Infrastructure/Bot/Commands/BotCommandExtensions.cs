@@ -3,7 +3,7 @@ using TelegramBot.Framework.Utilities.System;
 
 namespace TelegramBot.Application.Infrastructure.Bot.Commands;
 
-public static class BotCommandExtensions
+internal static class BotCommandExtensions
 {
     private static readonly ConcurrentDictionary<Type, BotCommandDescriptor> s_commandDescriptors = new();
     private static readonly ConcurrentDictionary<Type, CallbackCommandDescriptor> s_callbackCommandDescriptors = new();

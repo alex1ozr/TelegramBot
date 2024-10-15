@@ -6,7 +6,7 @@ namespace TelegramBot.Application.Features.Weather.DataProvider;
 public interface IWeatherProvider
 {
     /// <summary>
-    /// Get temperature for the city
+    /// Get temperature for the city in Celsius
     /// </summary>
     int GetTemperature(string city);
 }
