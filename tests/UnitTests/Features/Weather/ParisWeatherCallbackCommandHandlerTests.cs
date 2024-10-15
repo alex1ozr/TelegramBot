@@ -16,6 +16,9 @@ namespace TelegramBot.UnitTests.Features.Weather;
 /// <summary>
 /// Tests for <see cref="ParisWeatherCallbackCommandHandler"/>
 /// </summary>
+/// <remarks>
+/// It is just a one little sample to show how to test a command handler.
+/// </remarks>
 public sealed class ParisWeatherCallbackCommandHandlerTests
 {
     private readonly IFixture _fixture = new Fixture().Customize(new AutoMoqCustomization());
@@ -36,7 +39,7 @@ public sealed class ParisWeatherCallbackCommandHandlerTests
     }
 
     [Fact]
-    public async Task Handle_ShouldSendMessageWithParisWeather()
+    public async Task Handle_WhenEnglish_ShouldSend()
     {
         // Arrange
         var temperature = _fixture.Create<int>();
@@ -68,6 +71,8 @@ public sealed class ParisWeatherCallbackCommandHandlerTests
         // Assert
         VerifySentMessage(messageParameters, message.Chat.Id, $"Current temperature in Paris: {temperature} C");
     }
+
+    // Other tests are omitted for brevity
 
     private void VerifySentMessage(
         Dictionary<string, object?>? messageParameters,

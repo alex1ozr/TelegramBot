@@ -53,6 +53,14 @@ and are available in the [Dashboard](https://learn.microsoft.com/en-us/dotnet/as
 - `telegram_bot.commands_failed` - A counter of commands that failed to execute
 - `telegram_bot.users_created` - A counter of new users who have interacted with the bot
 
+## Tests
+The application contains unit tests for the `Application` layer using the [xUnit](https://xunit.net) testing framework.
+- The tests are located in the [UnitTests](../tests/UnitTests) project.
+- !!! The tests are not exhaustive and are meant to demonstrate how to write unit tests for the application.
+  - Dependency injection tests: [MediatrRegistrationTests.cs](../tests/UnitTests/Dependencies/MediatrRegistrationTests.cs)
+  - Command handler tests: [ParisWeatherCallbackCommandHandlerTests.cs](../tests/UnitTests/Features/Weather/ParisWeatherCallbackCommandHandlerTests.cs)
+  - Framework tests: [Framework/Utilities/System](../tests/UnitTests/Framework/Utilities/System/)
+
 ## Code Style
 The solution uses [EditorConfig](.editorconfig), inherited from [Azure SDK .NET](https://github.com/Azure/azure-sdk-for-net/blob/main/.editorconfig), to maintain a consistent code style.
 
