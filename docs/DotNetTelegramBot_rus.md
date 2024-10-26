@@ -45,7 +45,7 @@
     - [MediatR](https://github.com/jbogard/MediatR) для реализации [паттерна CQS](https://en.wikipedia.org/wiki/Command–query_separation) и уменьшения связанности.
     - [OpenTelemetry](https://opentelemetry.io) для логирования, трассировки и мониторинга.
     - [Unit-тесты](https://github.com/alex1ozr/TelegramBot/tree/main/tests/UnitTests) с использованием [xUnit](https://xunit.net), [FluentAssertions](https://fluentassertions.com) и [Moq](https://github.com/devlooped/moq).
-    - [Архитектурные тесты](https://github.com/alex1ozr/TelegramBot/tree/main/tests/ArchitectureTests) для проверки соответствия кода [чистой архитектуре](https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html).
+    - [Архитектурные тесты](https://github.com/alex1ozr/TelegramBot/tree/main/tests/ArchitectureTests) для проверки соответствия кода [чистой архитектуре](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
 - Функциональные:
     - Получение обновлений через Polling (Webhook не рассматривается в целях простоты).
     - Поддержка пожертвований в виде [Telegram Stars](https://telegram.org/blog/telegram-stars).
@@ -96,7 +96,7 @@ src
 
 Данная архитектура позволяет легко масштабировать и поддерживать приложение, разделяя ответственность между различными слоями и обеспечивая гибкость и модульность кода.
 
-Зависимости между слоями выстроены по правилам [чистой архитектуры](https://blog.cleancoder.com/uncle-bob/2011/11/22/Clean-Architecture.html). Например, слой `Application` зависит от слоя `Domain`, но не зависит от слоя `Data`.
+Зависимости между слоями выстроены по правилам [чистой архитектуры](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html). Например, слой `Application` зависит от слоя `Domain`, но не зависит от слоя `Data`.
 
 ### Инфраструктура бота
 
