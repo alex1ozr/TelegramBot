@@ -233,10 +233,11 @@ sequenceDiagram
 
     TelegramAPI ->> UpdateReceiver: Получение обновления
     UpdateReceiver ->> WeatherBot: Передача обновления
-    WeatherBot ->> CommandFactory: Передача обновления
-    CommandFactory ->> MediatR: Создание команды
+    WeatherBot ->> CommandFactory: Создание команды
+    CommandFactory ->> WeatherBot: Команда создана
+    WeatherBot ->> MediatR: Отправка команды на обработку
     MediatR ->> CommandHandler: Обработка команды
-    CommandHandler ->> TelegramAPI: Отправка ответа
+    CommandHandler ->> TelegramAPI: Отправка ответа пользователю
 ```
 
 ## Заключение
