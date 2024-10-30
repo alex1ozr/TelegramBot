@@ -11,7 +11,7 @@ namespace TelegramBot.Application.Infrastructure.HostedServices;
 
 internal sealed class UpdateReceiver :
     BackgroundService,
-        IUpdateReceiver
+    IUpdateReceiver
 {
     private readonly ActivitySource _activitySource =
         new(typeof(WeatherBot).Assembly.GetName().Name!,
@@ -48,11 +48,7 @@ internal sealed class UpdateReceiver :
     {
         var actionBlock = new ActionBlock<Update>(
             ProcessUpdateAsync,
-            new ExecutionDataflowBlockOptions
-            {
-                MaxDegreeOfParallelism = 20,
-                CancellationToken = stoppingToken
-            }
+            new ExecutionDataflowBlockOptions { MaxDegreeOfParallelism = 20, CancellationToken = stoppingToken }
         );
 
         while (!stoppingToken.IsCancellationRequested)

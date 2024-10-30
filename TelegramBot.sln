@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "src\Framework
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{3283B3FA-E70D-433D-95BB-5A33D121D25F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "tests\ArchitectureTests\ArchitectureTests.csproj", "{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,7 @@ Global
 		{D06BC24E-6A4D-47C4-B1E3-51DEF66DA2BC} = {081E339F-E0ED-4B62-BEF9-77BC895920AA}
 		{ED5A7B14-BBFC-4BC8-9ECA-2361E19F9A3E} = {9C14EA93-E7B9-4C61-8171-8CB5F4F0E853}
 		{3283B3FA-E70D-433D-95BB-5A33D121D25F} = {AF029B6A-B861-4299-9627-BBA2FC115A83}
+		{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4} = {AF029B6A-B861-4299-9627-BBA2FC115A83}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{64A65D6C-4D0F-49D1-8E01-1B5CBBA88723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -133,5 +136,9 @@ Global
 		{3283B3FA-E70D-433D-95BB-5A33D121D25F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3283B3FA-E70D-433D-95BB-5A33D121D25F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3283B3FA-E70D-433D-95BB-5A33D121D25F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E4A5DE-91E2-43FE-AA2C-DB7EA7C8C3E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
