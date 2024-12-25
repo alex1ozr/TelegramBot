@@ -5,7 +5,7 @@ A monolithic .NET application that demonstrates how to build a Telegram bot usin
 - [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
     - [Nullable reference types](https://learn.microsoft.com/en-us/dotnet/csharp/nullable-references)
     - [Central package management](https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management)
-- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) for running the application
+- [.NET Aspire 9](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview) for running the application
 - [Entity Framework Core 8](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew)
 - [PostgreSQL](https://www.postgresql.org)
 - [MediatR](https://github.com/jbogard/MediatR)
@@ -25,9 +25,6 @@ A monolithic .NET application that demonstrates how to build a Telegram bot usin
 
 ### Main
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [.NET Aspire workload](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
-    - Execute `dotnet workload update` to update the installed workloads.
-    - Execute `dotnet workload install aspire` to install the Aspire workload.
 - [Docker](https://www.docker.com/get-started)
 
 ### Running API

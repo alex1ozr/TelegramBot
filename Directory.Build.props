@@ -9,7 +9,8 @@
 
     <WarningLevel>9999</WarningLevel>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
-    <NoWarn>$(NoWarn);</NoWarn>
+    <NoWarn>$(NoWarn)</NoWarn>
+    <NuGetAudit>false</NuGetAudit>
     <WarningsAsErrors>CA2007</WarningsAsErrors>
     <!--CA2007: Do not directly await a Task-->
 
